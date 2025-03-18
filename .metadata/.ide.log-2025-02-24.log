@@ -1,0 +1,16 @@
+2025-02-25 00:00:22,866 [INFO] MainUpdater:2872 - connection check result : 10
+2025-02-25 00:01:14,530 [INFO] WebApp:638 - userauth.ini deleted or not created
+2025-02-25 00:01:14,777 [INFO] ServerAccessManage:473 - Download File stm32cube_fw_f4_v1280.zip
+2025-02-25 00:02:22,941 [INFO] AnalyticsPlugin:368 - Accepted License(s): [FW.F4.1.28.0]
+2025-02-25 00:02:22,942 [INFO] FileExtend:240 - Unzip File : stm32cube_fw_f4_v1280.zip
+2025-02-25 00:02:22,942 [INFO] FileExtend:255 - Standard Zip Deflate
+2025-02-25 00:03:54,422 [INFO] ServerAccessManage:473 - Download File stm32cube_fw_f4_v1281.zip
+2025-02-25 00:04:21,452 [INFO] FileExtend:240 - Unzip File : stm32cube_fw_f4_v1281.zip
+2025-02-25 00:04:21,452 [INFO] FileExtend:255 - Standard Zip Deflate
+2025-02-25 00:05:17,689 [INFO] AnalyticsPlugin:368 - Accepted License(s): [FW.F4.1.28.0]
+2025-02-25 00:05:17,690 [INFO] FileExtend:240 - Unzip File : stm32cube_fw_f4_v1280.zip
+2025-02-25 00:05:17,691 [INFO] FileExtend:255 - Standard Zip Deflate
+2025-02-25 00:06:26,312 [INFO] LoadServerPackagesThread:196 - End of LoadServerPackages Thread
+2025-02-25 00:06:26,772 [INFO] ThirdPartyModel:298 - Start build external matchings
+2025-02-25 00:06:27,232 [INFO] ThirdPartyModel:316 - End build external matchings
+2025-02-25 00:06:27,248 [INFO] CheckServerUpdateThread:120 - End of CheckServer Thread
