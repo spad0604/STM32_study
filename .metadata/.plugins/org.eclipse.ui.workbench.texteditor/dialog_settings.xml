@@ -6,8 +6,18 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="GPIOC"/>
+		<item key="selection" value="GPIO_InitStruct.Pin = GPIO_PIN_5;"/>
 		<list key="findhistory">
+			<item value="GPIO_InitStruct.Pin = GPIO_PIN_5;"/>
+			<item value="direction"/>
+			<item value="irda"/>
+			<item value="/* USER CODE BEGIN Header */"/>
+			<item value="extern"/>
+			<item value="ex"/>
+			<item value="PV"/>
+			<item value="Exit"/>
+			<item value="MX_GPIO"/>
+			<item value="EXT"/>
 			<item value="GPIOC"/>
 		</list>
 		<list key="replacehistory">

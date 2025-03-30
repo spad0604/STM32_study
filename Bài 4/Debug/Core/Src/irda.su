@@ -1,0 +1,2 @@
+../Core/Src/irda.c:17:6:IrGetBitTime	8	static
+../Core/Src/irda.c:37:6:IrDecode	24	static
