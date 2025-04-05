@@ -2279,3 +2279,967 @@ Finished building: default.size.stdout
  
 Finished building: IrRemoteControl.list
  
+10:32:45 **** Build of configuration Debug for project SieuAm ****
+make -j16 all 
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o"
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Startup/startup_stm32f429zitx.d" -MT"Core/Startup/startup_stm32f429zitx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Startup/startup_stm32f429zitx.o" "../Core/Startup/startup_stm32f429zitx.s"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/syscalls.o"
+arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/sysmem.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32f4xx.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32f4xx.d" -MT"Core/Src/system_stm32f4xx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/system_stm32f4xx.o"
+../Core/Src/stm32f4xx_it.c: In function 'EXTI0_IRQHandler':
+../Core/Src/stm32f4xx_it.c:212:21: error: 'TRIG_GPIO_Port' undeclared (first use in this function)
+  212 |   HAL_GPIO_WritePin(TRIG_GPIO_Port, TRIG_Pin, GPIO_PIN_SET);
+      |                     ^~~~~~~~~~~~~~
+../Core/Src/stm32f4xx_it.c:212:21: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/stm32f4xx_it.c:212:37: error: 'TRIG_Pin' undeclared (first use in this function)
+  212 |   HAL_GPIO_WritePin(TRIG_GPIO_Port, TRIG_Pin, GPIO_PIN_SET);
+      |                                     ^~~~~~~~
+../Core/Src/stm32f4xx_it.c: In function 'EXTI15_10_IRQHandler':
+../Core/Src/stm32f4xx_it.c:228:32: error: 'ECHO_GPIO_Port' undeclared (first use in this function)
+  228 |   int state = HAL_GPIO_ReadPin(ECHO_GPIO_Port, ECHO_Pin);
+      |                                ^~~~~~~~~~~~~~
+../Core/Src/stm32f4xx_it.c:228:48: error: 'ECHO_Pin' undeclared (first use in this function)
+  228 |   int state = HAL_GPIO_ReadPin(ECHO_GPIO_Port, ECHO_Pin);
+      |                                                ^~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/stm32f4xx_it.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+10:33:57 **** Incremental Build of configuration Debug for project SieuAm ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc -o "SieuAm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM32\SieuAm\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SieuAm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SieuAm.elf
+ 
+arm-none-eabi-size  SieuAm.elf 
+arm-none-eabi-objdump -h -S SieuAm.elf  > "SieuAm.list"
+   text	   data	    bss	    dec	    hex	filename
+  14748	    104	   1984	  16836	   41c4	SieuAm.elf
+Finished building: default.size.stdout
+ 
+Finished building: SieuAm.list
+ 
+10:34:29 **** Incremental Build of configuration Debug for project SieuAm ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "SieuAm.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM32\SieuAm\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SieuAm.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SieuAm.elf
+ 
+arm-none-eabi-size  SieuAm.elf 
+arm-none-eabi-objdump -h -S SieuAm.elf  > "SieuAm.list"
+   text	   data	    bss	    dec	    hex	filename
+  14748	    104	   1984	  16836	   41c4	SieuAm.elf
+Finished building: default.size.stdout
+ 
+Finished building: SieuAm.list
+ 
+10:37:25 **** Incremental Build of configuration Debug for project SieuAm ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+../Core/Src/stm32f4xx_it.c: In function 'UART_SendString':
+../Core/Src/stm32f4xx_it.c:63:5: warning: implicit declaration of function 'HAL_UART_Transmit' [-Wimplicit-function-declaration]
+   63 |     HAL_UART_Transmit(&huart2, (uint8_t*)str, strlen(str), HAL_MAX_DELAY);
+      |     ^~~~~~~~~~~~~~~~~
+../Core/Src/stm32f4xx_it.c:63:24: error: 'huart2' undeclared (first use in this function)
+   63 |     HAL_UART_Transmit(&huart2, (uint8_t*)str, strlen(str), HAL_MAX_DELAY);
+      |                        ^~~~~~
+../Core/Src/stm32f4xx_it.c:63:24: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/stm32f4xx_it.c: At top level:
+../Core/Src/stm32f4xx_it.c:69:8: error: unknown type name 'UART_HandleTypeDef'
+   69 | extern UART_HandleTypeDef huart2;
+      |        ^~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/stm32f4xx_it.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+10:44:51 **** Incremental Build of configuration Debug for project SieuAm ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+../Core/Src/main.c:46:1: error: unknown type name 'UART_HandleTypeDef'; did you mean 'TIM_HandleTypeDef'?
+   46 | UART_HandleTypeDef huart2;
+      | ^~~~~~~~~~~~~~~~~~
+      | TIM_HandleTypeDef
+../Core/Src/stm32f4xx_it.c: In function 'UART_SendString':
+../Core/Src/stm32f4xx_it.c:63:5: warning: implicit declaration of function 'HAL_UART_Transmit' [-Wimplicit-function-declaration]
+   63 |     HAL_UART_Transmit(&huart2, (uint8_t*)str, strlen(str), HAL_MAX_DELAY);
+      |     ^~~~~~~~~~~~~~~~~
+../Core/Src/stm32f4xx_it.c:63:24: error: 'huart2' undeclared (first use in this function)
+   63 |     HAL_UART_Transmit(&huart2, (uint8_t*)str, strlen(str), HAL_MAX_DELAY);
+      |                        ^~~~~~
+../Core/Src/stm32f4xx_it.c:63:24: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/stm32f4xx_it.c: At top level:
+../Core/Src/stm32f4xx_it.c:69:8: error: unknown type name 'UART_HandleTypeDef'
+   69 | extern UART_HandleTypeDef huart2;
+      |        ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'UART_SendString':
+../Core/Src/main.c:60:5: warning: implicit declaration of function 'HAL_UART_Transmit' [-Wimplicit-function-declaration]
+   60 |     HAL_UART_Transmit(&huart2, (uint8_t*)str, strlen(str), HAL_MAX_DELAY);
+      |     ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'MX_USART2_UART_Init':
+../Core/Src/main.c:212:9: error: request for member 'Instance' in something not a structure or union
+  212 |   huart2.Instance = USART2;
+      |         ^
+../Core/Src/main.c:213:9: error: request for member 'Init' in something not a structure or union
+  213 |   huart2.Init.BaudRate = 115200;
+      |         ^
+../Core/Src/main.c:214:9: error: request for member 'Init' in something not a structure or union
+  214 |   huart2.Init.WordLength = UART_WORDLENGTH_8B;
+      |         ^
+make: *** [Core/Src/subdir.mk:34: Core/Src/stm32f4xx_it.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Core/Src/main.c:214:28: error: 'UART_WORDLENGTH_8B' undeclared (first use in this function)
+  214 |   huart2.Init.WordLength = UART_WORDLENGTH_8B;
+      |                            ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:214:28: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:215:9: error: request for member 'Init' in something not a structure or union
+  215 |   huart2.Init.StopBits = UART_STOPBITS_1;
+      |         ^
+../Core/Src/main.c:215:26: error: 'UART_STOPBITS_1' undeclared (first use in this function)
+  215 |   huart2.Init.StopBits = UART_STOPBITS_1;
+      |                          ^~~~~~~~~~~~~~~
+../Core/Src/main.c:216:9: error: request for member 'Init' in something not a structure or union
+  216 |   huart2.Init.Parity = UART_PARITY_NONE;
+      |         ^
+../Core/Src/main.c:216:24: error: 'UART_PARITY_NONE' undeclared (first use in this function)
+  216 |   huart2.Init.Parity = UART_PARITY_NONE;
+      |                        ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:217:9: error: request for member 'Init' in something not a structure or union
+  217 |   huart2.Init.Mode = UART_MODE_TX_RX;
+      |         ^
+../Core/Src/main.c:217:22: error: 'UART_MODE_TX_RX' undeclared (first use in this function)
+  217 |   huart2.Init.Mode = UART_MODE_TX_RX;
+      |                      ^~~~~~~~~~~~~~~
+../Core/Src/main.c:218:9: error: request for member 'Init' in something not a structure or union
+  218 |   huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+      |         ^
+../Core/Src/main.c:218:27: error: 'UART_HWCONTROL_NONE' undeclared (first use in this function)
+  218 |   huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+      |                           ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:219:9: error: request for member 'Init' in something not a structure or union
+  219 |   huart2.Init.OverSampling = UART_OVERSAMPLING_16;
+      |         ^
+../Core/Src/main.c:219:30: error: 'UART_OVERSAMPLING_16' undeclared (first use in this function)
+  219 |   huart2.Init.OverSampling = UART_OVERSAMPLING_16;
+      |                              ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:220:7: warning: implicit declaration of function 'HAL_UART_Init'; did you mean 'HAL_DMA_Init'? [-Wimplicit-function-declaration]
+  220 |   if (HAL_UART_Init(&huart2) != HAL_OK)
+      |       ^~~~~~~~~~~~~
+      |       HAL_DMA_Init
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+10:45:47 **** Incremental Build of configuration Debug for project SieuAm ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+../Core/Src/stm32f4xx_it.c:25:10: fatal error: stm32f4xx_hal_uart.h: No such file or directory
+   25 | #include "stm32f4xx_hal_uart.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+../Core/Src/main.c:46:1: error: unknown type name 'UART_HandleTypeDef'; did you mean 'TIM_HandleTypeDef'?
+   46 | UART_HandleTypeDef huart2;
+      | ^~~~~~~~~~~~~~~~~~
+      | TIM_HandleTypeDef
+make: *** [Core/Src/subdir.mk:34: Core/Src/stm32f4xx_it.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Core/Src/main.c: In function 'UART_SendString':
+../Core/Src/main.c:60:5: warning: implicit declaration of function 'HAL_UART_Transmit' [-Wimplicit-function-declaration]
+   60 |     HAL_UART_Transmit(&huart2, (uint8_t*)str, strlen(str), HAL_MAX_DELAY);
+      |     ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'MX_USART2_UART_Init':
+../Core/Src/main.c:212:9: error: request for member 'Instance' in something not a structure or union
+  212 |   huart2.Instance = USART2;
+      |         ^
+../Core/Src/main.c:213:9: error: request for member 'Init' in something not a structure or union
+  213 |   huart2.Init.BaudRate = 115200;
+      |         ^
+../Core/Src/main.c:214:9: error: request for member 'Init' in something not a structure or union
+  214 |   huart2.Init.WordLength = UART_WORDLENGTH_8B;
+      |         ^
+../Core/Src/main.c:214:28: error: 'UART_WORDLENGTH_8B' undeclared (first use in this function)
+  214 |   huart2.Init.WordLength = UART_WORDLENGTH_8B;
+      |                            ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:214:28: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:215:9: error: request for member 'Init' in something not a structure or union
+  215 |   huart2.Init.StopBits = UART_STOPBITS_1;
+      |         ^
+../Core/Src/main.c:215:26: error: 'UART_STOPBITS_1' undeclared (first use in this function)
+  215 |   huart2.Init.StopBits = UART_STOPBITS_1;
+      |                          ^~~~~~~~~~~~~~~
+../Core/Src/main.c:216:9: error: request for member 'Init' in something not a structure or union
+  216 |   huart2.Init.Parity = UART_PARITY_NONE;
+      |         ^
+../Core/Src/main.c:216:24: error: 'UART_PARITY_NONE' undeclared (first use in this function)
+  216 |   huart2.Init.Parity = UART_PARITY_NONE;
+      |                        ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:217:9: error: request for member 'Init' in something not a structure or union
+  217 |   huart2.Init.Mode = UART_MODE_TX_RX;
+      |         ^
+../Core/Src/main.c:217:22: error: 'UART_MODE_TX_RX' undeclared (first use in this function)
+  217 |   huart2.Init.Mode = UART_MODE_TX_RX;
+      |                      ^~~~~~~~~~~~~~~
+../Core/Src/main.c:218:9: error: request for member 'Init' in something not a structure or union
+  218 |   huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+      |         ^
+../Core/Src/main.c:218:27: error: 'UART_HWCONTROL_NONE' undeclared (first use in this function)
+  218 |   huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+      |                           ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:219:9: error: request for member 'Init' in something not a structure or union
+  219 |   huart2.Init.OverSampling = UART_OVERSAMPLING_16;
+      |         ^
+../Core/Src/main.c:219:30: error: 'UART_OVERSAMPLING_16' undeclared (first use in this function)
+  219 |   huart2.Init.OverSampling = UART_OVERSAMPLING_16;
+      |                              ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:220:7: warning: implicit declaration of function 'HAL_UART_Init'; did you mean 'HAL_DMA_Init'? [-Wimplicit-function-declaration]
+  220 |   if (HAL_UART_Init(&huart2) != HAL_OK)
+      |       ^~~~~~~~~~~~~
+      |       HAL_DMA_Init
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+10:47:03 **** Incremental Build of configuration Debug for project SieuAm ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+../Core/Src/main.c:47:1: error: unknown type name 'UART_HandleTypeDef'; did you mean 'TIM_HandleTypeDef'?
+   47 | UART_HandleTypeDef huart2;
+      | ^~~~~~~~~~~~~~~~~~
+      | TIM_HandleTypeDef
+../Core/Src/stm32f4xx_it.c: In function 'UART_SendString':
+../Core/Src/stm32f4xx_it.c:64:5: warning: implicit declaration of function 'HAL_UART_Transmit' [-Wimplicit-function-declaration]
+   64 |     HAL_UART_Transmit(&huart2, (uint8_t*)str, strlen(str), HAL_MAX_DELAY);
+      |     ^~~~~~~~~~~~~~~~~
+../Core/Src/stm32f4xx_it.c:64:24: error: 'huart2' undeclared (first use in this function)
+   64 |     HAL_UART_Transmit(&huart2, (uint8_t*)str, strlen(str), HAL_MAX_DELAY);
+      |                        ^~~~~~
+../Core/Src/stm32f4xx_it.c:64:24: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/stm32f4xx_it.c: At top level:
+../Core/Src/stm32f4xx_it.c:70:8: error: unknown type name 'UART_HandleTypeDef'
+   70 | extern UART_HandleTypeDef huart2;
+      |        ^~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/stm32f4xx_it.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Core/Src/main.c: In function 'UART_SendString':
+../Core/Src/main.c:61:5: warning: implicit declaration of function 'HAL_UART_Transmit' [-Wimplicit-function-declaration]
+   61 |     HAL_UART_Transmit(&huart2, (uint8_t*)str, strlen(str), HAL_MAX_DELAY);
+      |     ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'MX_USART2_UART_Init':
+../Core/Src/main.c:213:9: error: request for member 'Instance' in something not a structure or union
+  213 |   huart2.Instance = USART2;
+      |         ^
+../Core/Src/main.c:214:9: error: request for member 'Init' in something not a structure or union
+  214 |   huart2.Init.BaudRate = 115200;
+      |         ^
+../Core/Src/main.c:215:9: error: request for member 'Init' in something not a structure or union
+  215 |   huart2.Init.WordLength = UART_WORDLENGTH_8B;
+      |         ^
+../Core/Src/main.c:215:28: error: 'UART_WORDLENGTH_8B' undeclared (first use in this function)
+  215 |   huart2.Init.WordLength = UART_WORDLENGTH_8B;
+      |                            ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:215:28: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:216:9: error: request for member 'Init' in something not a structure or union
+  216 |   huart2.Init.StopBits = UART_STOPBITS_1;
+      |         ^
+../Core/Src/main.c:216:26: error: 'UART_STOPBITS_1' undeclared (first use in this function)
+  216 |   huart2.Init.StopBits = UART_STOPBITS_1;
+      |                          ^~~~~~~~~~~~~~~
+../Core/Src/main.c:217:9: error: request for member 'Init' in something not a structure or union
+  217 |   huart2.Init.Parity = UART_PARITY_NONE;
+      |         ^
+../Core/Src/main.c:217:24: error: 'UART_PARITY_NONE' undeclared (first use in this function)
+  217 |   huart2.Init.Parity = UART_PARITY_NONE;
+      |                        ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:218:9: error: request for member 'Init' in something not a structure or union
+  218 |   huart2.Init.Mode = UART_MODE_TX_RX;
+      |         ^
+../Core/Src/main.c:218:22: error: 'UART_MODE_TX_RX' undeclared (first use in this function)
+  218 |   huart2.Init.Mode = UART_MODE_TX_RX;
+      |                      ^~~~~~~~~~~~~~~
+../Core/Src/main.c:219:9: error: request for member 'Init' in something not a structure or union
+  219 |   huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+      |         ^
+../Core/Src/main.c:219:27: error: 'UART_HWCONTROL_NONE' undeclared (first use in this function)
+  219 |   huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+      |                           ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:220:9: error: request for member 'Init' in something not a structure or union
+  220 |   huart2.Init.OverSampling = UART_OVERSAMPLING_16;
+      |         ^
+../Core/Src/main.c:220:30: error: 'UART_OVERSAMPLING_16' undeclared (first use in this function)
+  220 |   huart2.Init.OverSampling = UART_OVERSAMPLING_16;
+      |                              ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:221:7: warning: implicit declaration of function 'HAL_UART_Init'; did you mean 'HAL_DMA_Init'? [-Wimplicit-function-declaration]
+  221 |   if (HAL_UART_Init(&huart2) != HAL_OK)
+      |       ^~~~~~~~~~~~~
+      |       HAL_DMA_Init
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+10:49:57 **** Incremental Build of configuration Debug for project SieuAm ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+../Core/Src/main.c:47:1: error: unknown type name 'UART_HandleTypeDef'; did you mean 'TIM_HandleTypeDef'?
+   47 | UART_HandleTypeDef huart1;
+      | ^~~~~~~~~~~~~~~~~~
+      | TIM_HandleTypeDef
+../Core/Src/stm32f4xx_it.c: In function 'UART_SendString':
+../Core/Src/stm32f4xx_it.c:64:5: warning: implicit declaration of function 'HAL_UART_Transmit' [-Wimplicit-function-declaration]
+   64 |     HAL_UART_Transmit(&huart1, (uint8_t*)str, strlen(str), HAL_MAX_DELAY);
+      |     ^~~~~~~~~~~~~~~~~
+../Core/Src/stm32f4xx_it.c:64:24: error: 'huart1' undeclared (first use in this function)
+   64 |     HAL_UART_Transmit(&huart1, (uint8_t*)str, strlen(str), HAL_MAX_DELAY);
+      |                        ^~~~~~
+../Core/Src/stm32f4xx_it.c:64:24: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/stm32f4xx_it.c: At top level:
+../Core/Src/stm32f4xx_it.c:70:8: error: unknown type name 'UART_HandleTypeDef'
+   70 | extern UART_HandleTypeDef huart1;
+      |        ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'UART_SendString':
+../Core/Src/main.c:61:5: warning: implicit declaration of function 'HAL_UART_Transmit' [-Wimplicit-function-declaration]
+   61 |     HAL_UART_Transmit(&huart2, (uint8_t*)str, strlen(str), HAL_MAX_DELAY);
+      |     ^~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/stm32f4xx_it.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Core/Src/main.c:61:24: error: 'huart2' undeclared (first use in this function); did you mean 'huart1'?
+   61 |     HAL_UART_Transmit(&huart2, (uint8_t*)str, strlen(str), HAL_MAX_DELAY);
+      |                        ^~~~~~
+      |                        huart1
+../Core/Src/main.c:61:24: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c: In function 'MX_USART1_UART_Init':
+../Core/Src/main.c:221:9: error: request for member 'Instance' in something not a structure or union
+  221 |   huart1.Instance = USART1;
+      |         ^
+../Core/Src/main.c:222:9: error: request for member 'Init' in something not a structure or union
+  222 |   huart1.Init.BaudRate = 115200;
+      |         ^
+../Core/Src/main.c:223:9: error: request for member 'Init' in something not a structure or union
+  223 |   huart1.Init.WordLength = UART_WORDLENGTH_8B;
+      |         ^
+../Core/Src/main.c:223:28: error: 'UART_WORDLENGTH_8B' undeclared (first use in this function)
+  223 |   huart1.Init.WordLength = UART_WORDLENGTH_8B;
+      |                            ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:224:9: error: request for member 'Init' in something not a structure or union
+  224 |   huart1.Init.StopBits = UART_STOPBITS_1;
+      |         ^
+../Core/Src/main.c:224:26: error: 'UART_STOPBITS_1' undeclared (first use in this function)
+  224 |   huart1.Init.StopBits = UART_STOPBITS_1;
+      |                          ^~~~~~~~~~~~~~~
+../Core/Src/main.c:225:9: error: request for member 'Init' in something not a structure or union
+  225 |   huart1.Init.Parity = UART_PARITY_NONE;
+      |         ^
+../Core/Src/main.c:225:24: error: 'UART_PARITY_NONE' undeclared (first use in this function)
+  225 |   huart1.Init.Parity = UART_PARITY_NONE;
+      |                        ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:226:9: error: request for member 'Init' in something not a structure or union
+  226 |   huart1.Init.Mode = UART_MODE_TX_RX;
+      |         ^
+../Core/Src/main.c:226:22: error: 'UART_MODE_TX_RX' undeclared (first use in this function)
+  226 |   huart1.Init.Mode = UART_MODE_TX_RX;
+      |                      ^~~~~~~~~~~~~~~
+../Core/Src/main.c:227:9: error: request for member 'Init' in something not a structure or union
+  227 |   huart1.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+      |         ^
+../Core/Src/main.c:227:27: error: 'UART_HWCONTROL_NONE' undeclared (first use in this function)
+  227 |   huart1.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+      |                           ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:228:9: error: request for member 'Init' in something not a structure or union
+  228 |   huart1.Init.OverSampling = UART_OVERSAMPLING_16;
+      |         ^
+../Core/Src/main.c:228:30: error: 'UART_OVERSAMPLING_16' undeclared (first use in this function)
+  228 |   huart1.Init.OverSampling = UART_OVERSAMPLING_16;
+      |                              ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:229:7: warning: implicit declaration of function 'HAL_UART_Init'; did you mean 'HAL_DMA_Init'? [-Wimplicit-function-declaration]
+  229 |   if (HAL_UART_Init(&huart1) != HAL_OK)
+      |       ^~~~~~~~~~~~~
+      |       HAL_DMA_Init
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:58:13: warning: 'MX_USART2_UART_Init' used but never defined
+   58 | static void MX_USART2_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:211:13: warning: 'MX_USART1_UART_Init' defined but not used [-Wunused-function]
+  211 | static void MX_USART1_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+10:51:53 **** Incremental Build of configuration Debug for project SieuAm ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+../Core/Src/main.c:47:1: error: unknown type name 'UART_HandleTypeDef'; did you mean 'TIM_HandleTypeDef'?
+   47 | UART_HandleTypeDef huart1;
+      | ^~~~~~~~~~~~~~~~~~
+      | TIM_HandleTypeDef
+../Core/Src/stm32f4xx_it.c: In function 'UART_SendString':
+../Core/Src/stm32f4xx_it.c:64:5: warning: implicit declaration of function 'HAL_UART_Transmit' [-Wimplicit-function-declaration]
+   64 |     HAL_UART_Transmit(&huart1, (uint8_t*)str, strlen(str), HAL_MAX_DELAY);
+      |     ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'UART_SendString':
+../Core/Src/main.c:61:9: warning: implicit declaration of function 'HAL_UART_Transmit' [-Wimplicit-function-declaration]
+   61 |         HAL_UART_Transmit(&huart1, (const uint8_t *)str, strlen(str), 2);
+      |         ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'MX_USART1_UART_Init':
+../Core/Src/main.c:220:9: error: request for member 'Instance' in something not a structure or union
+  220 |   huart1.Instance = USART1;
+      |         ^
+../Core/Src/main.c:221:9: error: request for member 'Init' in something not a structure or union
+  221 |   huart1.Init.BaudRate = 115200;
+      |         ^
+../Core/Src/main.c:222:9: error: request for member 'Init' in something not a structure or union
+  222 |   huart1.Init.WordLength = UART_WORDLENGTH_8B;
+      |         ^
+../Core/Src/stm32f4xx_it.c:64:24: error: 'huart1' undeclared (first use in this function)
+   64 |     HAL_UART_Transmit(&huart1, (uint8_t*)str, strlen(str), HAL_MAX_DELAY);
+      |                        ^~~~~~
+../Core/Src/stm32f4xx_it.c:64:24: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/stm32f4xx_it.c: At top level:
+../Core/Src/stm32f4xx_it.c:70:8: error: unknown type name 'UART_HandleTypeDef'
+   70 | extern UART_HandleTypeDef huart1;
+      |        ^~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/stm32f4xx_it.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Core/Src/main.c:222:28: error: 'UART_WORDLENGTH_8B' undeclared (first use in this function)
+  222 |   huart1.Init.WordLength = UART_WORDLENGTH_8B;
+      |                            ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:222:28: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:223:9: error: request for member 'Init' in something not a structure or union
+  223 |   huart1.Init.StopBits = UART_STOPBITS_1;
+      |         ^
+../Core/Src/main.c:223:26: error: 'UART_STOPBITS_1' undeclared (first use in this function)
+  223 |   huart1.Init.StopBits = UART_STOPBITS_1;
+      |                          ^~~~~~~~~~~~~~~
+../Core/Src/main.c:224:9: error: request for member 'Init' in something not a structure or union
+  224 |   huart1.Init.Parity = UART_PARITY_NONE;
+      |         ^
+../Core/Src/main.c:224:24: error: 'UART_PARITY_NONE' undeclared (first use in this function)
+  224 |   huart1.Init.Parity = UART_PARITY_NONE;
+      |                        ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:225:9: error: request for member 'Init' in something not a structure or union
+  225 |   huart1.Init.Mode = UART_MODE_TX_RX;
+      |         ^
+../Core/Src/main.c:225:22: error: 'UART_MODE_TX_RX' undeclared (first use in this function)
+  225 |   huart1.Init.Mode = UART_MODE_TX_RX;
+      |                      ^~~~~~~~~~~~~~~
+../Core/Src/main.c:226:9: error: request for member 'Init' in something not a structure or union
+  226 |   huart1.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+      |         ^
+../Core/Src/main.c:226:27: error: 'UART_HWCONTROL_NONE' undeclared (first use in this function)
+  226 |   huart1.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+      |                           ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:227:9: error: request for member 'Init' in something not a structure or union
+  227 |   huart1.Init.OverSampling = UART_OVERSAMPLING_16;
+      |         ^
+../Core/Src/main.c:227:30: error: 'UART_OVERSAMPLING_16' undeclared (first use in this function)
+  227 |   huart1.Init.OverSampling = UART_OVERSAMPLING_16;
+      |                              ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:228:7: warning: implicit declaration of function 'HAL_UART_Init'; did you mean 'HAL_DMA_Init'? [-Wimplicit-function-declaration]
+  228 |   if (HAL_UART_Init(&huart1) != HAL_OK)
+      |       ^~~~~~~~~~~~~
+      |       HAL_DMA_Init
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+10:56:47 **** Incremental Build of configuration Debug for project SieuAm ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+../Core/Src/stm32f4xx_it.c: In function 'UART_SendString':
+../Core/Src/stm32f4xx_it.c:55:5: warning: implicit declaration of function 'HAL_UART_Transmit' [-Wimplicit-function-declaration]
+   55 |     HAL_UART_Transmit(&huart1, (uint8_t*)str, strlen(str), HAL_MAX_DELAY);
+      |     ^~~~~~~~~~~~~~~~~
+../Core/Src/stm32f4xx_it.c:55:24: error: 'huart1' undeclared (first use in this function)
+   55 |     HAL_UART_Transmit(&huart1, (uint8_t*)str, strlen(str), HAL_MAX_DELAY);
+      |                        ^~~~~~
+../Core/Src/stm32f4xx_it.c:55:24: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/stm32f4xx_it.c:55:47: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+   55 |     HAL_UART_Transmit(&huart1, (uint8_t*)str, strlen(str), HAL_MAX_DELAY);
+      |                                               ^~~~~~
+../Core/Src/main.c: In function 'UART_SendString':
+../Core/Src/main.c:58:9: warning: implicit declaration of function 'HAL_UART_Transmit' [-Wimplicit-function-declaration]
+   58 |         HAL_UART_Transmit(&huart1, (const uint8_t *)str, strlen(str), 2);
+      |         ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:58:28: error: 'huart1' undeclared (first use in this function)
+   58 |         HAL_UART_Transmit(&huart1, (const uint8_t *)str, strlen(str), 2);
+      |                            ^~~~~~
+../Core/Src/main.c:58:28: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/stm32f4xx_it.c:23:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   22 | #include "stm32f4xx_it.h"
+  +++ |+#include <string.h>
+   23 | /* Private includes ----------------------------------------------------------*/
+../Core/Src/stm32f4xx_it.c:55:47: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+   55 |     HAL_UART_Transmit(&huart1, (uint8_t*)str, strlen(str), HAL_MAX_DELAY);
+      |                                               ^~~~~~
+../Core/Src/stm32f4xx_it.c:55:47: note: include '<string.h>' or provide a declaration of 'strlen'
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Core/Src/stm32f4xx_it.c: In function 'EXTI15_10_IRQHandler':
+../Core/Src/stm32f4xx_it.c:229:5: error: 'tim6_count' undeclared (first use in this function)
+  229 |     tim6_count = 0;
+      |     ^~~~~~~~~~
+../Core/Src/stm32f4xx_it.c:236:39: error: 'SOUND_SPEED' undeclared (first use in this function)
+  236 |     float distance = (echo_duration * SOUND_SPEED) / (2.0 * TIMER_FREQ);
+      |                                       ^~~~~~~~~~~
+../Core/Src/stm32f4xx_it.c:236:61: error: 'TIMER_FREQ' undeclared (first use in this function)
+  236 |     float distance = (echo_duration * SOUND_SPEED) / (2.0 * TIMER_FREQ);
+      |                                                             ^~~~~~~~~~
+../Core/Src/stm32f4xx_it.c:239:5: warning: implicit declaration of function 'snprintf' [-Wimplicit-function-declaration]
+  239 |     snprintf(uart_buffer, UART_BUFFER_SIZE,
+      |     ^~~~~~~~
+../Core/Src/stm32f4xx_it.c:23:1: note: include '<stdio.h>' or provide a declaration of 'snprintf'
+   22 | #include "stm32f4xx_it.h"
+  +++ |+#include <stdio.h>
+   23 | /* Private includes ----------------------------------------------------------*/
+../Core/Src/stm32f4xx_it.c:239:5: warning: incompatible implicit declaration of built-in function 'snprintf' [-Wbuiltin-declaration-mismatch]
+  239 |     snprintf(uart_buffer, UART_BUFFER_SIZE,
+      |     ^~~~~~~~
+../Core/Src/stm32f4xx_it.c:239:5: note: include '<stdio.h>' or provide a declaration of 'snprintf'
+../Core/Src/stm32f4xx_it.c:239:14: error: 'uart_buffer' undeclared (first use in this function)
+  239 |     snprintf(uart_buffer, UART_BUFFER_SIZE,
+      |              ^~~~~~~~~~~
+../Core/Src/stm32f4xx_it.c:239:27: error: 'UART_BUFFER_SIZE' undeclared (first use in this function); did you mean 'IS_DMA_BUFFER_SIZE'?
+  239 |     snprintf(uart_buffer, UART_BUFFER_SIZE,
+      |                           ^~~~~~~~~~~~~~~~
+      |                           IS_DMA_BUFFER_SIZE
+../Core/Src/stm32f4xx_it.c: In function 'TIM6_DAC_IRQHandler':
+../Core/Src/stm32f4xx_it.c:257:3: error: 'tim6_count' undeclared (first use in this function)
+  257 |   tim6_count++;
+      |   ^~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/stm32f4xx_it.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+11:03:27 **** Incremental Build of configuration Debug for project SieuAm ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+../Core/Src/stm32f4xx_it.c: In function 'UART_SendString':
+../Core/Src/stm32f4xx_it.c:55:5: warning: implicit declaration of function 'HAL_UART_Transmit' [-Wimplicit-function-declaration]
+   55 |     HAL_UART_Transmit(&huart1, (uint8_t*)str, strlen(str), HAL_MAX_DELAY);
+      |     ^~~~~~~~~~~~~~~~~
+../Core/Src/stm32f4xx_it.c:55:24: error: 'huart1' undeclared (first use in this function)
+   55 |     HAL_UART_Transmit(&huart1, (uint8_t*)str, strlen(str), HAL_MAX_DELAY);
+      |                        ^~~~~~
+../Core/Src/stm32f4xx_it.c:55:24: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/stm32f4xx_it.c:55:47: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+   55 |     HAL_UART_Transmit(&huart1, (uint8_t*)str, strlen(str), HAL_MAX_DELAY);
+      |                                               ^~~~~~
+../Core/Src/stm32f4xx_it.c:23:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   22 | #include "stm32f4xx_it.h"
+  +++ |+#include <string.h>
+   23 | /* Private includes ----------------------------------------------------------*/
+../Core/Src/stm32f4xx_it.c:55:47: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+   55 |     HAL_UART_Transmit(&huart1, (uint8_t*)str, strlen(str), HAL_MAX_DELAY);
+      |                                               ^~~~~~
+../Core/Src/stm32f4xx_it.c:55:47: note: include '<string.h>' or provide a declaration of 'strlen'
+../Core/Src/stm32f4xx_it.c: At top level:
+../Core/Src/stm32f4xx_it.c:61:8: error: unknown type name 'UART_HandleTypeDef'
+   61 | extern UART_HandleTypeDef huart1;
+      |        ^~~~~~~~~~~~~~~~~~
+../Core/Src/stm32f4xx_it.c: In function 'EXTI15_10_IRQHandler':
+../Core/Src/stm32f4xx_it.c:230:5: error: 'tim6_count' undeclared (first use in this function)
+  230 |     tim6_count = 0;
+      |     ^~~~~~~~~~
+../Core/Src/main.c:47:1: error: unknown type name 'UART_HandleTypeDef'; did you mean 'TIM_HandleTypeDef'?
+   47 | UART_HandleTypeDef huart1;
+      | ^~~~~~~~~~~~~~~~~~
+      | TIM_HandleTypeDef
+../Core/Src/stm32f4xx_it.c:237:39: error: 'SOUND_SPEED' undeclared (first use in this function)
+  237 |     float distance = (echo_duration * SOUND_SPEED) / (2.0 * TIMER_FREQ);
+      |                                       ^~~~~~~~~~~
+../Core/Src/stm32f4xx_it.c:237:61: error: 'TIMER_FREQ' undeclared (first use in this function)
+  237 |     float distance = (echo_duration * SOUND_SPEED) / (2.0 * TIMER_FREQ);
+      |                                                             ^~~~~~~~~~
+../Core/Src/stm32f4xx_it.c:240:5: warning: implicit declaration of function 'snprintf' [-Wimplicit-function-declaration]
+  240 |     snprintf(uart_buffer, UART_BUFFER_SIZE,
+      |     ^~~~~~~~
+../Core/Src/stm32f4xx_it.c:23:1: note: include '<stdio.h>' or provide a declaration of 'snprintf'
+   22 | #include "stm32f4xx_it.h"
+  +++ |+#include <stdio.h>
+   23 | /* Private includes ----------------------------------------------------------*/
+../Core/Src/stm32f4xx_it.c:240:5: warning: incompatible implicit declaration of built-in function 'snprintf' [-Wbuiltin-declaration-mismatch]
+  240 |     snprintf(uart_buffer, UART_BUFFER_SIZE,
+      |     ^~~~~~~~
+../Core/Src/stm32f4xx_it.c:240:5: note: include '<stdio.h>' or provide a declaration of 'snprintf'
+../Core/Src/main.c: In function 'UART_SendString':
+../Core/Src/main.c:60:9: warning: implicit declaration of function 'HAL_UART_Transmit' [-Wimplicit-function-declaration]
+   60 |         HAL_UART_Transmit(&huart1, (const uint8_t *)str, strlen(str), 2);
+      |         ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'MX_USART1_UART_Init':
+../Core/Src/main.c:270:9: error: request for member 'Instance' in something not a structure or union
+  270 |   huart1.Instance = USART1;
+      |         ^
+../Core/Src/main.c:271:9: error: request for member 'Init' in something not a structure or union
+  271 |   huart1.Init.BaudRate = 115200;
+      |         ^
+../Core/Src/main.c:272:9: error: request for member 'Init' in something not a structure or union
+  272 |   huart1.Init.WordLength = UART_WORDLENGTH_8B;
+      |         ^
+../Core/Src/stm32f4xx_it.c:240:14: error: 'uart_buffer' undeclared (first use in this function)
+  240 |     snprintf(uart_buffer, UART_BUFFER_SIZE,
+      |              ^~~~~~~~~~~
+../Core/Src/main.c:272:28: error: 'UART_WORDLENGTH_8B' undeclared (first use in this function)
+  272 |   huart1.Init.WordLength = UART_WORDLENGTH_8B;
+      |                            ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:272:28: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:273:9: error: request for member 'Init' in something not a structure or union
+  273 |   huart1.Init.StopBits = UART_STOPBITS_1;
+      |         ^
+../Core/Src/stm32f4xx_it.c:240:27: error: 'UART_BUFFER_SIZE' undeclared (first use in this function); did you mean 'IS_DMA_BUFFER_SIZE'?
+  240 |     snprintf(uart_buffer, UART_BUFFER_SIZE,
+      |                           ^~~~~~~~~~~~~~~~
+      |                           IS_DMA_BUFFER_SIZE
+../Core/Src/stm32f4xx_it.c: In function 'TIM6_DAC_IRQHandler':
+../Core/Src/stm32f4xx_it.c:258:3: error: 'tim6_count' undeclared (first use in this function)
+  258 |   tim6_count++;
+      |   ^~~~~~~~~~
+../Core/Src/main.c:273:26: error: 'UART_STOPBITS_1' undeclared (first use in this function)
+  273 |   huart1.Init.StopBits = UART_STOPBITS_1;
+      |                          ^~~~~~~~~~~~~~~
+../Core/Src/main.c:274:9: error: request for member 'Init' in something not a structure or union
+  274 |   huart1.Init.Parity = UART_PARITY_NONE;
+      |         ^
+make: *** [Core/Src/subdir.mk:34: Core/Src/stm32f4xx_it.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Core/Src/main.c:274:24: error: 'UART_PARITY_NONE' undeclared (first use in this function)
+  274 |   huart1.Init.Parity = UART_PARITY_NONE;
+      |                        ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:275:9: error: request for member 'Init' in something not a structure or union
+  275 |   huart1.Init.Mode = UART_MODE_TX_RX;
+      |         ^
+../Core/Src/main.c:275:22: error: 'UART_MODE_TX_RX' undeclared (first use in this function)
+  275 |   huart1.Init.Mode = UART_MODE_TX_RX;
+      |                      ^~~~~~~~~~~~~~~
+../Core/Src/main.c:276:9: error: request for member 'Init' in something not a structure or union
+  276 |   huart1.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+      |         ^
+../Core/Src/main.c:276:27: error: 'UART_HWCONTROL_NONE' undeclared (first use in this function)
+  276 |   huart1.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+      |                           ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:277:9: error: request for member 'Init' in something not a structure or union
+  277 |   huart1.Init.OverSampling = UART_OVERSAMPLING_16;
+      |         ^
+../Core/Src/main.c:277:30: error: 'UART_OVERSAMPLING_16' undeclared (first use in this function)
+  277 |   huart1.Init.OverSampling = UART_OVERSAMPLING_16;
+      |                              ^~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:278:7: warning: implicit declaration of function 'HAL_UART_Init'; did you mean 'HAL_DMA_Init'? [-Wimplicit-function-declaration]
+  278 |   if (HAL_UART_Init(&huart1) != HAL_OK)
+      |       ^~~~~~~~~~~~~
+      |       HAL_DMA_Init
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+11:17:25 **** Build of configuration Debug for project ok nha ****
+make -j16 all 
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o"
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Startup/startup_stm32f429zitx.d" -MT"Core/Startup/startup_stm32f429zitx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Startup/startup_stm32f429zitx.o" "../Core/Startup/startup_stm32f429zitx.s"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/syscalls.o"
+arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/sysmem.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32f4xx.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32f4xx.d" -MT"Core/Src/system_stm32f4xx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/system_stm32f4xx.o"
+arm-none-eabi-gcc -o "ok nha.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM32\ok nha\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ok nha.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+D:/CubeIDE/STM32CubeIDE_1.17.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.1.0.202410251130/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/stm32f4xx_it.o: in function `EXTI15_10_IRQHandler':
+D:/STM32/ok nha/Debug/../Core/Src/stm32f4xx_it.c:253: undefined reference to `tim6'
+D:/CubeIDE/STM32CubeIDE_1.17.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.1.0.202410251130/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/stm32f4xx_it.o: in function `TIM6_DAC_IRQHandler':
+D:/STM32/ok nha/Debug/../Core/Src/stm32f4xx_it.c:268: undefined reference to `tim6'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:64: ok nha.elf] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+11:17:45 **** Incremental Build of configuration Debug for project ok nha ****
+make -j16 all 
+arm-none-eabi-gcc -o "ok nha.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM32\ok nha\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ok nha.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+D:/CubeIDE/STM32CubeIDE_1.17.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.1.0.202410251130/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/stm32f4xx_it.o: in function `EXTI15_10_IRQHandler':
+D:/STM32/ok nha/Debug/../Core/Src/stm32f4xx_it.c:253: undefined reference to `tim6'
+D:/CubeIDE/STM32CubeIDE_1.17.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.1.0.202410251130/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/stm32f4xx_it.o: in function `TIM6_DAC_IRQHandler':
+D:/STM32/ok nha/Debug/../Core/Src/stm32f4xx_it.c:268: undefined reference to `tim6'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:64: ok nha.elf] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+11:18:22 **** Incremental Build of configuration Debug for project ok nha ****
+make -j16 all 
+arm-none-eabi-gcc -o "ok nha.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM32\ok nha\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ok nha.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+D:/CubeIDE/STM32CubeIDE_1.17.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.1.0.202410251130/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/stm32f4xx_it.o: in function `EXTI15_10_IRQHandler':
+D:/STM32/ok nha/Debug/../Core/Src/stm32f4xx_it.c:253: undefined reference to `tim6'
+D:/CubeIDE/STM32CubeIDE_1.17.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.1.0.202410251130/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/stm32f4xx_it.o: in function `TIM6_DAC_IRQHandler':
+D:/STM32/ok nha/Debug/../Core/Src/stm32f4xx_it.c:268: undefined reference to `tim6'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:64: ok nha.elf] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+11:19:04 **** Incremental Build of configuration Debug for project ok nha ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc -o "ok nha.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM32\ok nha\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ok nha.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+D:/CubeIDE/STM32CubeIDE_1.17.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.1.0.202410251130/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/stm32f4xx_it.o: in function `EXTI15_10_IRQHandler':
+D:/STM32/ok nha/Debug/../Core/Src/stm32f4xx_it.c:253: undefined reference to `tim6'
+D:/CubeIDE/STM32CubeIDE_1.17.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.1.0.202410251130/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/stm32f4xx_it.o: in function `TIM6_DAC_IRQHandler':
+D:/STM32/ok nha/Debug/../Core/Src/stm32f4xx_it.c:268: undefined reference to `tim6'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:64: ok nha.elf] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+11:19:54 **** Incremental Build of configuration Debug for project ok nha ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc -o "ok nha.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM32\ok nha\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ok nha.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+D:/CubeIDE/STM32CubeIDE_1.17.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.1.0.202410251130/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/stm32f4xx_it.o: in function `EXTI15_10_IRQHandler':
+D:/STM32/ok nha/Debug/../Core/Src/stm32f4xx_it.c:253: undefined reference to `tim6'
+D:/CubeIDE/STM32CubeIDE_1.17.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.1.0.202410251130/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/stm32f4xx_it.o: in function `TIM6_DAC_IRQHandler':
+D:/STM32/ok nha/Debug/../Core/Src/stm32f4xx_it.c:268: undefined reference to `tim6'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:64: ok nha.elf] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+11:20:33 **** Incremental Build of configuration Debug for project ok nha ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc -o "ok nha.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM32\ok nha\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ok nha.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+D:/CubeIDE/STM32CubeIDE_1.17.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.1.0.202410251130/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/stm32f4xx_it.o: in function `EXTI15_10_IRQHandler':
+D:/STM32/ok nha/Debug/../Core/Src/stm32f4xx_it.c:253: undefined reference to `tim6'
+D:/CubeIDE/STM32CubeIDE_1.17.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.1.0.202410251130/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/stm32f4xx_it.o: in function `TIM6_DAC_IRQHandler':
+D:/STM32/ok nha/Debug/../Core/Src/stm32f4xx_it.c:267: undefined reference to `tim6'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:64: ok nha.elf] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+11:20:45 **** Incremental Build of configuration Debug for project ok nha ****
+make -j16 all 
+arm-none-eabi-gcc -o "ok nha.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM32\ok nha\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ok nha.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+D:/CubeIDE/STM32CubeIDE_1.17.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.1.0.202410251130/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/stm32f4xx_it.o: in function `EXTI15_10_IRQHandler':
+D:/STM32/ok nha/Debug/../Core/Src/stm32f4xx_it.c:253: undefined reference to `tim6'
+D:/CubeIDE/STM32CubeIDE_1.17.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.1.0.202410251130/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/stm32f4xx_it.o: in function `TIM6_DAC_IRQHandler':
+D:/STM32/ok nha/Debug/../Core/Src/stm32f4xx_it.c:267: undefined reference to `tim6'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:64: ok nha.elf] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+11:20:56 **** Incremental Build of configuration Debug for project ok nha ****
+make -j16 all 
+arm-none-eabi-gcc -o "ok nha.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM32\ok nha\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ok nha.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+D:/CubeIDE/STM32CubeIDE_1.17.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.1.0.202410251130/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/stm32f4xx_it.o: in function `EXTI15_10_IRQHandler':
+D:/STM32/ok nha/Debug/../Core/Src/stm32f4xx_it.c:253: undefined reference to `tim6'
+D:/CubeIDE/STM32CubeIDE_1.17.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.1.0.202410251130/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/stm32f4xx_it.o: in function `TIM6_DAC_IRQHandler':
+D:/STM32/ok nha/Debug/../Core/Src/stm32f4xx_it.c:267: undefined reference to `tim6'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:64: ok nha.elf] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+11:21:39 **** Incremental Build of configuration Debug for project ok nha ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+../Core/Src/stm32f4xx_it.c: In function 'MemManage_Handler':
+../Core/Src/stm32f4xx_it.c:101:5: error: stray '@' in program
+  101 |   * @brief This function handles EXTI line0 interrupt.
+      |     ^
+../Core/Src/stm32f4xx_it.c:101:6: error: 'brief' undeclared (first use in this function)
+  101 |   * @brief This function handles EXTI line0 interrupt.
+      |      ^~~~~
+../Core/Src/stm32f4xx_it.c:101:6: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/stm32f4xx_it.c:101:11: error: expected ';' before 'This'
+  101 |   * @brief This function handles EXTI line0 interrupt.
+      |           ^~~~~
+      |           ;
+../Core/Src/stm32f4xx_it.c:166:1: error: expected declaration or statement at end of input
+  166 | }
+      | ^
+make: *** [Core/Src/subdir.mk:34: Core/Src/stm32f4xx_it.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+11:21:55 **** Incremental Build of configuration Debug for project ok nha ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc -o "ok nha.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM32\ok nha\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ok nha.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+D:/CubeIDE/STM32CubeIDE_1.17.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.1.0.202410251130/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/stm32f4xx_it.o: in function `EXTI15_10_IRQHandler':
+D:/STM32/ok nha/Debug/../Core/Src/stm32f4xx_it.c:253: undefined reference to `tim6'
+D:/CubeIDE/STM32CubeIDE_1.17.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.1.0.202410251130/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/stm32f4xx_it.o: in function `TIM6_DAC_IRQHandler':
+D:/STM32/ok nha/Debug/../Core/Src/stm32f4xx_it.c:267: undefined reference to `tim6'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:64: ok nha.elf] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+11:22:37 **** Incremental Build of configuration Debug for project ok nha ****
+make -j16 all 
+arm-none-eabi-gcc -o "ok nha.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM32\ok nha\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ok nha.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+D:/CubeIDE/STM32CubeIDE_1.17.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.1.0.202410251130/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/stm32f4xx_it.o: in function `EXTI15_10_IRQHandler':
+D:/STM32/ok nha/Debug/../Core/Src/stm32f4xx_it.c:253: undefined reference to `tim6'
+D:/CubeIDE/STM32CubeIDE_1.17.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.1.0.202410251130/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/stm32f4xx_it.o: in function `TIM6_DAC_IRQHandler':
+D:/STM32/ok nha/Debug/../Core/Src/stm32f4xx_it.c:267: undefined reference to `tim6'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:64: ok nha.elf] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+11:23:35 **** Incremental Build of configuration Debug for project ok nha ****
+make -j16 all 
+arm-none-eabi-gcc -o "ok nha.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM32\ok nha\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ok nha.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+D:/CubeIDE/STM32CubeIDE_1.17.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.1.0.202410251130/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/stm32f4xx_it.o: in function `EXTI15_10_IRQHandler':
+D:/STM32/ok nha/Debug/../Core/Src/stm32f4xx_it.c:253: undefined reference to `tim6'
+D:/CubeIDE/STM32CubeIDE_1.17.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.1.0.202410251130/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/stm32f4xx_it.o: in function `TIM6_DAC_IRQHandler':
+D:/STM32/ok nha/Debug/../Core/Src/stm32f4xx_it.c:267: undefined reference to `tim6'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:64: ok nha.elf] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+11:23:43 **** Incremental Build of configuration Debug for project ok nha ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "ok nha.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM32\ok nha\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ok nha.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+D:/CubeIDE/STM32CubeIDE_1.17.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.1.0.202410251130/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/stm32f4xx_it.o: in function `EXTI15_10_IRQHandler':
+D:/STM32/ok nha/Debug/../Core/Src/stm32f4xx_it.c:253: undefined reference to `tim6'
+D:/CubeIDE/STM32CubeIDE_1.17.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.1.0.202410251130/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/stm32f4xx_it.o: in function `TIM6_DAC_IRQHandler':
+D:/STM32/ok nha/Debug/../Core/Src/stm32f4xx_it.c:267: undefined reference to `tim6'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:64: ok nha.elf] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+11:24:12 **** Incremental Build of configuration Debug for project ok nha ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "ok nha.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM32\ok nha\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ok nha.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+D:/CubeIDE/STM32CubeIDE_1.17.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.1.0.202410251130/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/stm32f4xx_it.o: in function `EXTI15_10_IRQHandler':
+D:/STM32/ok nha/Debug/../Core/Src/stm32f4xx_it.c:253: undefined reference to `tim6'
+D:/CubeIDE/STM32CubeIDE_1.17.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.1.0.202410251130/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/stm32f4xx_it.o: in function `TIM6_DAC_IRQHandler':
+D:/STM32/ok nha/Debug/../Core/Src/stm32f4xx_it.c:267: undefined reference to `tim6'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:64: ok nha.elf] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+11:25:38 **** Incremental Build of configuration Debug for project ok nha ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc -o "ok nha.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM32\ok nha\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ok nha.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+D:/CubeIDE/STM32CubeIDE_1.17.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.1.0.202410251130/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/stm32f4xx_it.o: in function `EXTI15_10_IRQHandler':
+D:/STM32/ok nha/Debug/../Core/Src/stm32f4xx_it.c:253: undefined reference to `tim6'
+D:/CubeIDE/STM32CubeIDE_1.17.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.1.0.202410251130/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/stm32f4xx_it.o: in function `TIM6_DAC_IRQHandler':
+D:/STM32/ok nha/Debug/../Core/Src/stm32f4xx_it.c:268: undefined reference to `tim6'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:64: ok nha.elf] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+11:26:03 **** Incremental Build of configuration Debug for project ok nha ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+../Core/Src/stm32f4xx_it.c:60:12: warning: 'tim6' initialized and declared 'extern'
+   60 | extern int tim6 = 0;
+      |            ^~~~
+arm-none-eabi-gcc -o "ok nha.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM32\ok nha\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ok nha.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ok nha.elf
+ 
+arm-none-eabi-size  ok\ nha.elf 
+arm-none-eabi-objdump -h -S ok\ nha.elf  > "ok nha.list"
+   text	   data	    bss	    dec	    hex	filename
+  10476	     12	   1644	  12132	   2f64	ok nha.elf
+Finished building: default.size.stdout
+ 
+Finished building: ok nha.list
+ 
+11:26:09 **** Incremental Build of configuration Debug for project ok nha ****
+make -j16 all 
+arm-none-eabi-size  ok\ nha.elf 
+   text	   data	    bss	    dec	    hex	filename
+  10476	     12	   1644	  12132	   2f64	ok nha.elf
+Finished building: default.size.stdout
+ 
+11:28:14 **** Incremental Build of configuration Debug for project ok nha ****
+make -j16 all 
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32f4xx.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32f4xx.d" -MT"Core/Src/system_stm32f4xx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/system_stm32f4xx.o"
+../Core/Src/stm32f4xx_it.c:60:12: warning: 'tim6' initialized and declared 'extern'
+   60 | extern int tim6 = 0;
+      |            ^~~~
+arm-none-eabi-gcc -o "ok nha.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM32\ok nha\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ok nha.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ok nha.elf
+ 
+arm-none-eabi-size  ok\ nha.elf 
+arm-none-eabi-objdump -h -S ok\ nha.elf  > "ok nha.list"
+   text	   data	    bss	    dec	    hex	filename
+  10828	     12	   1644	  12484	   30c4	ok nha.elf
+Finished building: default.size.stdout
+ 
+Finished building: ok nha.list
+ 
+11:29:46 **** Incremental Build of configuration Debug for project ok nha ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+../Core/Src/stm32f4xx_it.c:60:12: warning: 'tim6' initialized and declared 'extern'
+   60 | extern int tim6 = 0;
+      |            ^~~~
+../Core/Src/stm32f4xx_it.c: In function 'EXTI15_10_IRQHandler':
+../Core/Src/stm32f4xx_it.c:245:13: warning: unused variable 'brightness' [-Wunused-variable]
+  245 |     uint8_t brightness = (uint8_t)((distance - 20) * 8.5); // 255/(50-20) = 8.5
+      |             ^~~~~~~~~~
+arm-none-eabi-gcc -o "ok nha.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM32\ok nha\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ok nha.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ok nha.elf
+ 
+arm-none-eabi-size  ok\ nha.elf 
+arm-none-eabi-objdump -h -S ok\ nha.elf  > "ok nha.list"
+   text	   data	    bss	    dec	    hex	filename
+  11012	     12	   1644	  12668	   317c	ok nha.elf
+Finished building: default.size.stdout
+ 
+Finished building: ok nha.list
+ 
+11:35:25 **** Incremental Build of configuration Debug for project ok nha ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+../Core/Src/stm32f4xx_it.c:60:12: warning: 'tim6' initialized and declared 'extern'
+   60 | extern int tim6 = 0;
+      |            ^~~~
+../Core/Src/stm32f4xx_it.c: In function 'EXTI15_10_IRQHandler':
+../Core/Src/stm32f4xx_it.c:234:5: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  234 |     printf("%d", distance);
+      |     ^~~~~~
+../Core/Src/stm32f4xx_it.c:23:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+   22 | #include "stm32f4xx_it.h"
+  +++ |+#include <stdio.h>
+   23 | /* Private includes ----------------------------------------------------------*/
+../Core/Src/stm32f4xx_it.c:234:5: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  234 |     printf("%d", distance);
+      |     ^~~~~~
+../Core/Src/stm32f4xx_it.c:234:5: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/stm32f4xx_it.c:234:14: warning: format '%d' expects argument of type 'int', but argument 2 has type 'double' [-Wformat=]
+  234 |     printf("%d", distance);
+      |             ~^   ~~~~~~~~
+      |              |   |
+      |              int double
+      |             %f
+../Core/Src/stm32f4xx_it.c:246:13: warning: unused variable 'brightness' [-Wunused-variable]
+  246 |     uint8_t brightness = (uint8_t)((distance - 20) * 8.5); // 255/(50-20) = 8.5
+      |             ^~~~~~~~~~
+arm-none-eabi-gcc -o "ok nha.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\STM32\ok nha\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ok nha.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ok nha.elf
+ 
+arm-none-eabi-size  ok\ nha.elf 
+arm-none-eabi-objdump -h -S ok\ nha.elf  > "ok nha.list"
+   text	   data	    bss	    dec	    hex	filename
+  15160	    104	   1984	  17248	   4360	ok nha.elf
+Finished building: default.size.stdout
+ 
+Finished building: ok nha.list
+ 

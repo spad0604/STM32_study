@@ -6,8 +6,10 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="GPIO_InitStruct.Pin = GPIO_PIN_5;"/>
+		<item key="selection" value="TIM6"/>
 		<list key="findhistory">
+			<item value="tim6"/>
+			<item value="UART2"/>
 			<item value="GPIO_InitStruct.Pin = GPIO_PIN_5;"/>
 			<item value="direction"/>
 			<item value="irda"/>

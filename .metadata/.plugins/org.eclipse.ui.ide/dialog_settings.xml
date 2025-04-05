@@ -23,6 +23,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="D:\Download\IrRemoteControl\Bài 4"/>
 			<item value="D:\Download\IrRemoteControl\IrRemoteControl"/>
 			<item value="D:\Download\Lab1_20242"/>
 		</list>
