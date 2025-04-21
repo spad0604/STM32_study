@@ -1,0 +1,35 @@
+#include "i2c_scan.h"
+#include "stdio.h"
+
+void I2C_Scan(I2C_HandleTypeDef *hi2c)
+{
+    sprintf(uart_buffer, "Bắt đầu quét bus I2C...\r\n");
+    HAL_UART_Transmit(&huart1, (uint8_t*)uart_buffer, strlen(uart_buffer), 1000);
+
+    HAL_StatusTypeDef result;
+    uint8_t i;
+    uint8_t count = 0;
+
+    // Địa chỉ I2C hợp lệ từ 0x01 đến 0x7F
+    for (i = 1; i < 128; i++)
+    {
+        // Lưu ý: Địa chỉ I2C trong HAL phải dịch trái 1 bit (vì bit thứ 0 là bit đọc/ghi)
+        result = HAL_I2C_IsDeviceReady(hi2c, (uint16_t)(i << 1), 1, 10);
+        if (result == HAL_OK)
+        {
+            printf("Tìm thấy thiết bị tại địa chỉ 0x%X\r\n", i);
+            count++;
+        }
+    }
+
+    if (count == 0)
+    {
+        sprintf(uart_buffer, "Không tìm thấy thiết bị nào trên bus I2C.\r\n");
+        HAL_UART_Transmit(&huart1, (uint8_t*)uart_buffer, strlen(uart_buffer), 1000);
+    }
+    else
+    {
+        sprintf(uart_buffer, "Tìm thấy tổng cộng %d thiết bị trên bus I2C.\r\n", count);
+        HAL_UART_Transmit(&huart1, (uint8_t*)uart_buffer, strlen(uart_buffer), 1000);
+    }
+}
