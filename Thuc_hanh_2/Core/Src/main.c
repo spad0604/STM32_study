@@ -31,10 +31,9 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-const char *valid_rfids[] = {
-    "23 6A 2A 30 53",
-    "43 E6 15 35 85",
-    "B3 DC 9E 19 E8"};
+#define MAX_VALID_RFIDS 10
+char valid_rfids[MAX_VALID_RFIDS][20];
+int num_valid_rfids = 0;
 
 /* USER CODE END PTD */
 
@@ -66,6 +65,10 @@ UART_HandleTypeDef huart1;
 
 /* USER CODE BEGIN PV */
 char buff[100];
+char rx_buffer[30]; // Bộ đệm nhận UART
+uint8_t rx_index = 0;
+uint8_t is_admin_mode = 0; // Chế độ quản trị để thêm thẻ mới
+uint8_t button_state = 0; // Trạng thái nút nhấn trước đó
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -159,27 +162,117 @@ void InitDisplay()
   SH1106_UpdateScreen();
   HAL_Delay(1000);
 }
+
 int isValidCardId(uint8_t *cardId)
 {
   char cardIdString[20];
   sprintf(cardIdString, "%02X %02X %02X %02X %02X", cardId[0], cardId[1], cardId[2], cardId[3], cardId[4]);
   
-  // Print the card ID to UART for debugging
+  // In cardID ra UART để debug
+  HAL_UART_Transmit(&huart1, (uint8_t *)"Scanned Card: ", 14, 1000);
   HAL_UART_Transmit(&huart1, (uint8_t *)cardIdString, strlen(cardIdString), 1000);
   HAL_UART_Transmit(&huart1, (uint8_t *)"\r\n", 2, 1000);
   
-  // Get the number of valid RFIDs in the array
-  int numValidRfids = sizeof(valid_rfids) / sizeof(valid_rfids[0]);
-  
-  // Check if the scanned card ID matches any of the valid RFIDs
-  for (int i = 0; i < numValidRfids; i++)
+  // Kiểm tra xem cardID có nằm trong danh sách hợp lệ không
+  for (int i = 0; i < num_valid_rfids; i++)
   {
     if (strcmp(cardIdString, valid_rfids[i]) == 0)
     {
-      return 1; // Card is valid
+      return 1; // Card hợp lệ
     }
   }
-  return 0; // Card is invalid
+  return 0; // Card không hợp lệ
+}
+
+// Thêm thẻ RFID mới vào danh sách
+void addNewRfid(const char* rfid) {
+  if (num_valid_rfids < MAX_VALID_RFIDS) {
+    strcpy(valid_rfids[num_valid_rfids], rfid);
+    num_valid_rfids++;
+    
+    sprintf(buff, "Added new RFID: %s\r\n", rfid);
+    HAL_UART_Transmit(&huart1, (uint8_t *)buff, strlen(buff), 1000);
+    
+    sprintf(buff, "Total RFIDs: %d\r\n", num_valid_rfids);
+    HAL_UART_Transmit(&huart1, (uint8_t *)buff, strlen(buff), 1000);
+  } else {
+    sprintf(buff, "Error: Maximum number of RFIDs reached\r\n");
+    HAL_UART_Transmit(&huart1, (uint8_t *)buff, strlen(buff), 1000);
+  }
+}
+
+// Xử lý lệnh từ UART
+void processCommand(char* cmd) {
+  // Loại bỏ ký tự xuống dòng nếu có
+  char* newline = strchr(cmd, '\r');
+  if (newline) *newline = 0;
+  newline = strchr(cmd, '\n');
+  if (newline) *newline = 0;
+  
+  // Kiểm tra lệnh
+  if (strncmp(cmd, "admin", 5) == 0) {
+    is_admin_mode = 1;
+    sprintf(buff, "Admin mode activated\r\n");
+    HAL_UART_Transmit(&huart1, (uint8_t *)buff, strlen(buff), 1000);
+    sprintf(buff, "Enter RFID to add (format: XX XX XX XX XX):\r\n");
+    HAL_UART_Transmit(&huart1, (uint8_t *)buff, strlen(buff), 1000);
+  }
+  else if (strncmp(cmd, "exit", 4) == 0) {
+    is_admin_mode = 0;
+    sprintf(buff, "Admin mode deactivated\r\n");
+    HAL_UART_Transmit(&huart1, (uint8_t *)buff, strlen(buff), 1000);
+  }
+  else if (strncmp(cmd, "list", 4) == 0) {
+    sprintf(buff, "Valid RFIDs (%d):\r\n", num_valid_rfids);
+    HAL_UART_Transmit(&huart1, (uint8_t *)buff, strlen(buff), 1000);
+    
+    for (int i = 0; i < num_valid_rfids; i++) {
+      sprintf(buff, "%d: %s\r\n", i+1, valid_rfids[i]);
+      HAL_UART_Transmit(&huart1, (uint8_t *)buff, strlen(buff), 1000);
+    }
+  }
+  else if (is_admin_mode && strlen(cmd) >= 14) {
+    // Kiểm tra định dạng RFID (XX XX XX XX XX)
+    int valid_format = 1;
+    if (strlen(cmd) >= 14) {
+      for (int i = 0; i < 14; i++) {
+        if ((i == 2 || i == 5 || i == 8 || i == 11) && cmd[i] != ' ') {
+          valid_format = 0;
+          break;
+        }
+        if ((i != 2 && i != 5 && i != 8 && i != 11) && 
+            !((cmd[i] >= '0' && cmd[i] <= '9') || 
+              (cmd[i] >= 'A' && cmd[i] <= 'F') ||
+              (cmd[i] >= 'a' && cmd[i] <= 'f'))) {
+          valid_format = 0;
+          break;
+        }
+      }
+    } else {
+      valid_format = 0;
+    }
+    
+    if (valid_format) {
+      // Chuyển đổi chữ thường thành chữ hoa
+      for (int i = 0; i < 14; i++) {
+        if (cmd[i] >= 'a' && cmd[i] <= 'f') {
+          cmd[i] = cmd[i] - 32; // Chuyển thành chữ hoa
+        }
+      }
+      
+      addNewRfid(cmd);
+    } else {
+      sprintf(buff, "Invalid RFID format. Use: XX XX XX XX XX\r\n");
+      HAL_UART_Transmit(&huart1, (uint8_t *)buff, strlen(buff), 1000);
+    }
+  }
+}
+
+// Khởi tạo một số RFID mặc định
+void initDefaultRfids() {
+  addNewRfid("43 B7 82 34 42");
+  addNewRfid("43 E6 15 35 85");
+  addNewRfid("B3 DC 9E 19 E8");
 }
 /* USER CODE END 0 */
 
@@ -216,6 +309,13 @@ int main(void)
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
   sprintf(buff, "Initializing...\r\n");
+  HAL_UART_Transmit(&huart1, (uint8_t *)buff, strlen(buff), 1000);
+
+  // Khởi tạo danh sách RFID mặc định
+  initDefaultRfids();
+  
+  // Hiển thị thông tin hướng dẫn sử dụng
+  sprintf(buff, "\r\nCommands:\r\n- admin: Enter admin mode\r\n- exit: Exit admin mode\r\n- list: List all valid RFIDs\r\n");
   HAL_UART_Transmit(&huart1, (uint8_t *)buff, strlen(buff), 1000);
 
   SetTime(); // Set initial time (can be commented out after first run)
@@ -287,83 +387,143 @@ int main(void)
     /* USER CODE BEGIN 3 */
     uint8_t CardId[5];
 
-    // Test RFID communication every few seconds
-    static uint32_t lastRfidTest = 0;
-    if (HAL_GetTick() - lastRfidTest > 3000)
-    {
-      lastRfidTest = HAL_GetTick();
+    // Kiểm tra nút nhấn PA0
+    uint8_t current_button_state = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0);
+    
+    // Phát hiện cạnh xuống (từ 1 -> 0, tức là nút vừa được nhấn)
+    if (button_state == 1 && current_button_state == 0) {
+      // Nút được nhấn, chuyển sang chế độ admin
+      is_admin_mode = !is_admin_mode; // Toggle chế độ admin
+      
+      if (is_admin_mode) {
+        sprintf(buff, "\r\nAdmin mode activated. Enter RFID to add (format: XX XX XX XX XX):\r\n");
+        HAL_UART_Transmit(&huart1, (uint8_t *)buff, strlen(buff), 1000);
+        // Xóa màn hình OLED và hiển thị thông báo ở chế độ admin
+        SH1106_Clear();
+        SH1106_GotoXY(0, 0);
+        SH1106_Puts("ADMIN MODE", &Font_11x18, SH1106_COLOR_WHITE);
+        SH1106_GotoXY(0, 25);
+        SH1106_Puts("Enter ID via", &Font_7x10, SH1106_COLOR_WHITE);
+        SH1106_GotoXY(0, 40);
+        SH1106_Puts("UART", &Font_7x10, SH1106_COLOR_WHITE);
+        SH1106_UpdateScreen();
+      } else {
+        sprintf(buff, "\r\nAdmin mode deactivated. Returning to normal operation.\r\n");
+        HAL_UART_Transmit(&huart1, (uint8_t *)buff, strlen(buff), 1000);
+        // Xóa màn hình OLED và hiển thị thông báo quay lại chế độ kiểm tra
+        SH1106_Clear();
+        SH1106_GotoXY(0, 0);
+        SH1106_Puts("RFID SCANNER", &Font_11x18, SH1106_COLOR_WHITE);
+        SH1106_GotoXY(0, 25);
+        SH1106_Puts("Waiting for", &Font_7x10, SH1106_COLOR_WHITE);
+        SH1106_GotoXY(0, 40);
+        SH1106_Puts("card...", &Font_7x10, SH1106_COLOR_WHITE);
+        SH1106_UpdateScreen();
+      }
+      
+      // Thêm delay chống dội nút
+      HAL_Delay(200);
+    }
+    
+    // Cập nhật trạng thái nút nhấn
+    button_state = current_button_state;
 
-      // Test reading a register
-      uint8_t status = TM_MFRC522_ReadRegister(MFRC522_REG_STATUS1);
-      sprintf(buff, "RFID Status: 0x%02X\r\n", status);
-      HAL_UART_Transmit(&huart1, (uint8_t *)buff, strlen(buff), 1000);
+    // Nhận dữ liệu từ UART
+    uint8_t rx_data;
+    if (HAL_UART_Receive(&huart1, &rx_data, 1, 10) == HAL_OK && is_admin_mode) {
+      if (rx_data == '\r' || rx_data == '\n') {
+        if (rx_index > 0) {
+          rx_buffer[rx_index] = 0; // Null terminate
+          processCommand(rx_buffer);
+          rx_index = 0; // Reset buffer
+        }
+      } else {
+        if (rx_index < sizeof(rx_buffer) - 1) {
+          rx_buffer[rx_index++] = rx_data;
+        }
+      }
     }
 
-    HAL_Delay(100);
+    // Chỉ kiểm tra thẻ RFID khi không ở chế độ admin
+    if (!is_admin_mode) {
+      // Test RFID communication every few seconds
+      static uint32_t lastRfidTest = 0;
+      if (HAL_GetTick() - lastRfidTest > 3000)
+      {
+        lastRfidTest = HAL_GetTick();
 
-    if (TM_MFRC522_Check(CardId) == MI_OK)
-    {
-      sprintf(buff, "Card ID: %02X %02X %02X %02X %02X\r\n", CardId[0], CardId[1], CardId[2], CardId[3], CardId[4]);
-      HAL_UART_Transmit(&huart1, (uint8_t *)buff, strlen(buff), 1000);
+        // Test reading a register
+        uint8_t status = TM_MFRC522_ReadRegister(MFRC522_REG_STATUS1);
+        sprintf(buff, "RFID Status: 0x%02X\r\n", status);
+        HAL_UART_Transmit(&huart1, (uint8_t *)buff, strlen(buff), 1000);
+      }
 
-      // Display card ID on OLED
-      SH1106_Clear();
+      HAL_Delay(100);
 
-//      if (isValidCardId(CardId) == 1)
-//      {
-//        sprintf(buff, "%s", "Welcome!");
-//        SH1106_GotoXY(0, 0);
-//        SH1106_Puts(buff, &Font_11x18, SH1106_COLOR_WHITE);
-//        HAL_UART_Transmit(&huart1, (uint8_t *)buff, strlen(buff), 1000);
-//        SH1106_GotoXY(0, 20);
-//        SH1106_Puts(buff, &Font_7x10, SH1106_COLOR_WHITE);
-//        SH1106_UpdateScreen();
-//      }
-//      else
-//      {
-//        sprintf(buff, "%s", "Rejected!");
-//        SH1106_GotoXY(0, 0);
-//        SH1106_Puts(buff, &Font_11x18, SH1106_COLOR_WHITE);
-//        SH1106_UpdateScreen();
-//      }
+      if (TM_MFRC522_Check(CardId) == MI_OK)
+      {
+        sprintf(buff, "Card ID: %02X %02X %02X %02X %02X\r\n", CardId[0], CardId[1], CardId[2], CardId[3], CardId[4]);
+        HAL_UART_Transmit(&huart1, (uint8_t *)buff, strlen(buff), 1000);
 
-       // Display each byte of the card ID on a separate line
-       sprintf(buff, "ID[0]: %02X", CardId[0]);
-       SH1106_GotoXY(10, 12);
-       SH1106_Puts(buff, &Font_7x10, SH1106_COLOR_WHITE);
+        // Display card ID on OLED
+        SH1106_Clear();
 
-       sprintf(buff, "ID[1]: %02X", CardId[1]);
-       SH1106_GotoXY(10, 22);
-       SH1106_Puts(buff, &Font_7x10, SH1106_COLOR_WHITE);
+        if (isValidCardId(CardId) == 1)
+        {
+          sprintf(buff, "%s", "Welcome!");
+          SH1106_GotoXY(10, 0);
+          SH1106_Puts(buff, &Font_7x10, SH1106_COLOR_WHITE);
+          HAL_UART_Transmit(&huart1, (uint8_t *)buff, strlen(buff), 1000);
+          SH1106_GotoXY(10, 20);
+          SH1106_Puts(buff, &Font_7x10, SH1106_COLOR_WHITE);
+        }
+        else
+        {
+          sprintf(buff, "%s", "Rejected!");
+          SH1106_GotoXY(10, 0);
+          SH1106_Puts(buff, &Font_7x10, SH1106_COLOR_WHITE);
+          HAL_UART_Transmit(&huart1, (uint8_t *)buff, strlen(buff), 1000);
+        }
 
-       sprintf(buff, "ID[2]: %02X", CardId[2]);
-       SH1106_GotoXY(10, 32);
-       SH1106_Puts(buff, &Font_7x10, SH1106_COLOR_WHITE);
+        //Display each byte of the card ID on a separate line
+        sprintf(buff, "ID[0]: %02X", CardId[0]);
+        SH1106_GotoXY(10, 12);
+        SH1106_Puts(buff, &Font_7x10, SH1106_COLOR_WHITE);
 
-       sprintf(buff, "ID[3]: %02X", CardId[3]);
-       SH1106_GotoXY(10, 42);
-       SH1106_Puts(buff, &Font_7x10, SH1106_COLOR_WHITE);
+        sprintf(buff, "ID[1]: %02X", CardId[1]);
+        SH1106_GotoXY(10, 22);
+        SH1106_Puts(buff, &Font_7x10, SH1106_COLOR_WHITE);
 
-       sprintf(buff, "ID[4]: %02X", CardId[4]);
-       SH1106_GotoXY(10, 52);
-       SH1106_Puts(buff, &Font_7x10, SH1106_COLOR_WHITE);
+        sprintf(buff, "ID[2]: %02X", CardId[2]);
+        SH1106_GotoXY(10, 32);
+        SH1106_Puts(buff, &Font_7x10, SH1106_COLOR_WHITE);
 
-       SH1106_UpdateScreen();
+        sprintf(buff, "ID[3]: %02X", CardId[3]);
+        SH1106_GotoXY(10, 42);
+        SH1106_Puts(buff, &Font_7x10, SH1106_COLOR_WHITE);
+
+        sprintf(buff, "ID[4]: %02X", CardId[4]);
+        SH1106_GotoXY(10, 52);
+        SH1106_Puts(buff, &Font_7x10, SH1106_COLOR_WHITE);
+
+        SH1106_UpdateScreen();
+        
+        // Thêm delay để không đọc lại thẻ liên tục
+        HAL_Delay(1000);
+      }
+      else if (HAL_GetTick() % 2000 < 1000) // Hiện thông báo mỗi 2 giây
+      {
+        // Hiển thị thông báo chờ thẻ
+        SH1106_Clear();
+        SH1106_GotoXY(0, 0);
+        SH1106_Puts("RFID SCANNER", &Font_11x18, SH1106_COLOR_WHITE);
+        SH1106_GotoXY(0, 25);
+        SH1106_Puts("Waiting for", &Font_7x10, SH1106_COLOR_WHITE);
+        SH1106_GotoXY(0, 40);
+        SH1106_Puts("card...", &Font_7x10, SH1106_COLOR_WHITE);
+        SH1106_UpdateScreen();
+      }
     }
-    else
-    {
-      sprintf(buff, "%s", "No card detect");
-      SH1106_Clear();
-      HAL_UART_Transmit(&huart1, (uint8_t *)buff, strlen(buff), 1000);
-      SH1106_GotoXY(12, 10);
-      SH1106_Puts(buff, &Font_11x18, 1);
-      SH1106_UpdateScreen();
-    }
-
-    //    currentTime = GetRTCTime();
-    //    DisplayTimeOnSH1106(currentTime);
-    //    DisplayTimeOnUART(currentTime);
-    //    HAL_Delay(1000); // Update every second
   }
   /* USER CODE END 3 */
 }
@@ -553,8 +713,8 @@ static void MX_GPIO_Init(void)
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOE_CLK_ENABLE();
   __HAL_RCC_GPIOH_CLK_ENABLE();
-  __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
+  __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOG_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
@@ -567,6 +727,12 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   GPIO_InitStruct.Alternate = GPIO_AF15_EVENTOUT;
   HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : PA0 */
+  GPIO_InitStruct.Pin = GPIO_PIN_0;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /*Configure GPIO pins : PG13 PG14 */
   GPIO_InitStruct.Pin = GPIO_PIN_13|GPIO_PIN_14;

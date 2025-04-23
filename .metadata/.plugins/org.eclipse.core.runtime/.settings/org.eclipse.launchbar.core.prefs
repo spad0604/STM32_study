@@ -8,4 +8,5 @@ org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:3.2_thuc_hanh\ Debug/activeLaun
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:FirstProject_HeNhung\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:FirstProject_HeNhung\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:IrRemoteControl\ Debug/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Thuc_hanh_2\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:timer\ Debug/activeLaunchMode=run
