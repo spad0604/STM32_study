@@ -96,26 +96,31 @@ void SetTime()
   HAL_I2C_Mem_Write(&hi2c3, 0xD0, 0, 1, (uint8_t *)&Set_time, 7, 1000);
 }
 
+uint8_t BCD_To_Dec(uint8_t bcd)
+{
+    return ((bcd >> 4) * 10) + (bcd & 0x0F);
+}
+
+
 struct Time GetRTCTime()
 {
+  struct Time Get_time_raw;
   struct Time Get_time;
-  HAL_I2C_Mem_Read(&hi2c3, 0xD0, 0, 1, (uint8_t *)&Get_time, 7, 1000);
 
-  // Fix seconds and minutes if they exceed 60
-  if (Get_time.sec >= 60)
-  {
-    Get_time.min += Get_time.sec / 60;
-    Get_time.sec %= 60;
-  }
+  HAL_I2C_Mem_Read(&hi2c3, 0xD0, 0, 1, (uint8_t *)&Get_time_raw, 7, 1000);
 
-  if (Get_time.min >= 60)
-  {
-    Get_time.hour += Get_time.min / 60;
-    Get_time.min %= 60;
-  }
+  Get_time.sec     = BCD_To_Dec(Get_time_raw.sec);
+  Get_time.min     = BCD_To_Dec(Get_time_raw.min);
+  Get_time.hour    = BCD_To_Dec(Get_time_raw.hour);
+  Get_time.day     = BCD_To_Dec(Get_time_raw.day);
+  Get_time.month   = BCD_To_Dec(Get_time_raw.month);
+  Get_time.year    = BCD_To_Dec(Get_time_raw.year);
+  Get_time.weekday = BCD_To_Dec(Get_time_raw.weekday);
+
 
   return Get_time;
 }
+
 
 void DisplayTimeOnUART(struct Time time)
 {
@@ -376,6 +381,12 @@ int main(void)
       SH1106_UpdateScreen();
     }
   }
+
+  FILE*f = open("log.txt", "w");
+  if(f == NULL) {
+	  sprintf(buff, "Cannot open file");
+	  HAL_UART_Transmit(&huart1, (uint8_t *)buff, strlen(buff), 1000);
+  }
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -476,6 +487,21 @@ int main(void)
           HAL_UART_Transmit(&huart1, (uint8_t *)buff, strlen(buff), 1000);
           SH1106_GotoXY(10, 20);
           SH1106_Puts(buff, &Font_7x10, SH1106_COLOR_WHITE);
+
+          struct Time time = GetRTCTime();
+          FILE*f = open("log.txt", "a");
+          if(f == NULL) {
+        	  sprintf(buff, "Cannot open file");
+        	  HAL_UART_Transmit(&huart1, (uint8_t *)buff, strlen(buff), 1000);
+          }
+          if (f != NULL)
+           {
+                 fprintf(f, "CardID: %s - Time: %02d:%02d:%02d %02d/%02d/20%02d\n",
+                          CardId,
+                          time.hour, time.min, time.sec,
+                          time.day, time.month, time.year);
+                  fclose(f);
+              }
         }
         else
         {

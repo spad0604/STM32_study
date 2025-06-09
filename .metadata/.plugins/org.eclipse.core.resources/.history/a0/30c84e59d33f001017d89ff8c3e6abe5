@@ -1,0 +1,17 @@
+/*
+ * mpu6050.h
+ *
+ *  Created on: Jun 3, 2025
+ *      Author: LENOVO
+ */
+
+#ifndef SRC_MPU6050_H_
+#define SRC_MPU6050_H_
+
+class mpu6050 {
+public:
+	mpu6050();
+	virtual ~mpu6050();
+};
+
+#endif /* SRC_MPU6050_H_ */

@@ -1,0 +1,6 @@
+2025-06-03 00:02:26,484 [INFO] MainUpdater:2872 - connection check result : 10
+2025-06-03 00:02:26,689 [INFO] McuFinderGlobals:76 - Set McuFinderConnectedMode to true
+2025-06-03 00:02:26,691 [INFO] MultiScanPanel:200 - Auto-refresh data requested => check proxy status ongoing
+2025-06-03 00:02:26,692 [INFO] FinderPluginLoader:95 - Searching for filters in installed packs
+2025-06-03 00:02:28,895 [INFO] LoadUrlFilesThread:185 - End of LoadServerUrlFiles without Thread
+2025-06-03 00:02:28,895 [INFO] DetailPanel:341 - Set advertising image to C:/Users/LENOVO/STM32Cube/Repository/\en.summit-h1-25-promotion.jpg

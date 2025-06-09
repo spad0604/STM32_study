@@ -1,0 +1,18 @@
+/*
+ * i2c.cpp
+ *
+ *  Created on: Jun 2, 2025
+ *      Author: LENOVO
+ */
+
+#include "i2c.h"
+
+i2c::i2c() {
+	// TODO Auto-generated constructor stub
+
+}
+
+i2c::~i2c() {
+	// TODO Auto-generated destructor stub
+}
+

@@ -1,0 +1,17 @@
+/*
+ * i2c.h
+ *
+ *  Created on: Jun 2, 2025
+ *      Author: LENOVO
+ */
+
+#ifndef SRC_I2C_H_
+#define SRC_I2C_H_
+
+class i2c {
+public:
+	i2c();
+	virtual ~i2c();
+};
+
+#endif /* SRC_I2C_H_ */

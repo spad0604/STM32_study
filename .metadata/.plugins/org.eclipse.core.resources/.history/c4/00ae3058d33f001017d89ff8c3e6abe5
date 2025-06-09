@@ -1,0 +1,18 @@
+/*
+ * mpu6050.cpp
+ *
+ *  Created on: Jun 3, 2025
+ *      Author: LENOVO
+ */
+
+#include "mpu6050.h"
+
+mpu6050::mpu6050() {
+	// TODO Auto-generated constructor stub
+
+}
+
+mpu6050::~mpu6050() {
+	// TODO Auto-generated destructor stub
+}
+

@@ -13,6 +13,31 @@
 		<item key="DIALOG_Y_ORIGIN" value="131"/>
 		<item key="DIALOG_WIDTH" value="457"/>
 		<item key="DIALOG_HEIGHT" value="452"/>
-		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-24|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-24|0|0|0|400|0|0|0|1|0|0|5|0|Segoe UI"/>
+	</section>
+	<section name="NewClassWizardPage">
+		<item key="namespaceSelected" value="false"/>
+		<item key="testFileSelected" value="false"/>
+		<item key="finalSelected" value="false"/>
+		<item key="stubImpl0" value="DEFINITION"/>
+		<item key="stubSelected0" value="true"/>
+		<item key="stubVirtual1" value="true"/>
+		<item key="stubImpl1" value="DEFINITION"/>
+		<item key="stubSelected1" value="true"/>
+		<item key="stubImpl2" value="DEFINITION"/>
+		<item key="stubSelected2" value="false"/>
+		<item key="stubImpl3" value="DEFINITION"/>
+		<item key="stubSelected3" value="false"/>
+		<item key="stubImpl4" value="DEFINITION"/>
+		<item key="stubSelected4" value="false"/>
+		<item key="stubImpl5" value="DEFINITION"/>
+		<item key="stubSelected5" value="false"/>
+	</section>
+	<section name="NewClassCreationWizard.dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="700"/>
+		<item key="DIALOG_Y_ORIGIN" value="63"/>
+		<item key="DIALOG_WIDTH" value="536"/>
+		<item key="DIALOG_HEIGHT" value="692"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
 	</section>
 </section>

@@ -1,0 +1,21 @@
+16:33:42 **** Build of configuration Debug for project STM32F429I_DISCO_REV_D01 ****
+make -j16 all 
+arm-none-eabi-g++ "C:/TouchGFXProjects/Clock/TouchGFX/gui/src/screen1_screen/Screen1View.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DUSE_HAL_DRIVER -DUSE_BPP=16 -DDEBUG -DSTM32F429xx -c -I../../Core/Inc -I../../Drivers/CMSIS/Include -I../../Drivers/BSP -I../../TouchGFX/target -I../../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../../TouchGFX/App -I../../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../../TouchGFX/target/generated -I../../Middlewares/Third_Party/FreeRTOS/Source/include -I../../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -I../../Drivers/STM32F4xx_HAL_Driver/Inc -I../../Middlewares/ST/touchgfx/framework/include -I../../TouchGFX/generated/fonts/include -I../../TouchGFX/generated/gui_generated/include -I../../TouchGFX/generated/images/include -I../../TouchGFX/generated/texts/include -I../../TouchGFX/gui/include -I../../TouchGFX/generated/videos/include -Os -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -femit-class-debug-always -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Application/User/gui/Screen1View.d" -MT"Application/User/gui/Screen1View.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Application/User/gui/Screen1View.o"
+arm-none-eabi-g++ -o "STM32F429I_DISCO_REV_D01.elf" @"objects.list"  -l:libtouchgfx-float-abi-hard.a -mcpu=cortex-m4 -T"C:\TouchGFXProjects\Clock\STM32CubeIDE\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F429I_DISCO_REV_D01.map" -Wl,--gc-sections -static -L../../Middlewares/ST/touchgfx/lib/core/cortex_m4f/gcc --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+D:/CubeIDE/STM32CubeIDE_1.17.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: STM32F429I_DISCO_REV_D01.elf has a LOAD segment with RWX permissions
+Finished building target: STM32F429I_DISCO_REV_D01.elf
+ 
+arm-none-eabi-size  STM32F429I_DISCO_REV_D01.elf 
+arm-none-eabi-objdump -h -S STM32F429I_DISCO_REV_D01.elf  > "STM32F429I_DISCO_REV_D01.list"
+arm-none-eabi-objcopy  -O ihex STM32F429I_DISCO_REV_D01.elf  "STM32F429I_DISCO_REV_D01.hex"
+   text	   data	    bss	    dec	    hex	filename
+  77430	    252	 540496	 618178	  96ec2	STM32F429I_DISCO_REV_D01.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM32F429I_DISCO_REV_D01.hex
+ 
+Finished building: STM32F429I_DISCO_REV_D01.list
+ 
+
+16:33:47 Build Finished. 0 errors, 1 warnings. (took 4s.226ms)
+
