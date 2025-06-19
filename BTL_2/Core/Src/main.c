@@ -142,7 +142,10 @@ void Read_Sensor_Data(void)
         acc_z = (raw_z * 981) / 4096;
         
         // In giá trị gia tốc theo đơn vị m/s² (đã nhân 100)
-        sprintf(buffer, "x:%ld, y:%ld, z:%ld\r\n", acc_x, acc_y, acc_z);
+        sprintf(buffer, "x:%ld.%02ld, y:%ld.%02ld, z:%ld.%02ld\r\n",
+                acc_x / 100, abs(acc_x % 100),
+                acc_y / 100, abs(acc_y % 100),
+                acc_z / 100, abs(acc_z % 100));
         HAL_UART_Transmit(&huart1, (uint8_t*)buffer, strlen(buffer), HAL_MAX_DELAY);
     }
 }
