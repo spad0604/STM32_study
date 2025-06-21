@@ -1,0 +1,90 @@
+@startuml USB_HID_Mouse_Sequence
+!theme plain
+skinparam backgroundColor #FFFFFF
+skinparam sequenceArrowThickness 2
+skinparam roundcorner 20
+
+title USB HID Mouse với MPU6050 - Sequence Diagram
+
+participant "STM32F429" as MCU
+participant "MPU6050" as SENSOR
+participant "Kalman Filter" as KALMAN
+participant "USB HID" as USB
+participant "PC Host" as PC
+
+== Khởi tạo hệ thống ==
+MCU -> MCU: HAL_Init()
+MCU -> MCU: SystemClock_Config()
+MCU -> MCU: MX_GPIO_Init()
+MCU -> MCU: MX_I2C1_Init()
+MCU -> MCU: MX_USB_DEVICE_Init()
+
+note over MCU: USB Clock = 48MHz\nPLLQ = 5
+
+MCU -> USB: USBD_Init(&hUsbDeviceFS, &FS_Desc, DEVICE_FS)
+USB -> USB: Khởi tạo USB Device
+MCU -> USB: USBD_RegisterClass(&hUsbDeviceFS, &USBD_HID)
+USB -> USB: Đăng ký HID Mouse Class
+MCU -> USB: USBD_Start(&hUsbDeviceFS)
+USB -> USB: Bắt đầu USB Device
+
+note over MCU: Delay 1000ms cho USB enumeration
+
+== Khởi tạo Sensor ==
+MCU -> SENSOR: MPU6050_Init()   
+SENSOR -> SENSOR: Wake up (PWR_MGMT_1 = 0x00)
+SENSOR -> SENSOR: Set Sample Rate (SMPLRT_DIV = 0x07)
+SENSOR -> SENSOR: Set DLPF (CONFIG = 0x03)
+SENSOR -> SENSOR: Set Gyro Range ±2000°/s
+SENSOR -> SENSOR: Set Accel Range ±8g
+
+note over MCU: Delay 500ms cho sensor ổn định
+
+== Khởi tạo Kalman Filter ==
+MCU -> KALMAN: KalmanFilter_Init(&kalman_x, 0.001, 0.003, 0.03)
+MCU -> KALMAN: KalmanFilter_Init(&kalman_y, 0.001, 0.003, 0.03)
+MCU -> KALMAN: KalmanFilter_Init(&kalman_z, 0.001, 0.003, 0.03)
+
+== USB Enumeration ==
+USB -> PC: Device Descriptor
+PC -> USB: Get Device Descriptor
+USB -> PC: Configuration Descriptor
+PC -> USB: Get Configuration Descriptor
+USB -> PC: HID Report Descriptor
+PC -> USB: Set Configuration
+USB -> PC: HID Mouse Interface
+
+note over PC: Windows nhận diện\n"STM32 Human interface"
+
+== Main Loop - Đọc Sensor ==
+loop Mỗi 100ms
+    MCU -> SENSOR: HAL_I2C_Mem_Read(GYRO_XOUT_H, 6 bytes)
+    SENSOR -> MCU: raw_gyro_x, raw_gyro_y, raw_gyro_z
+    
+    MCU -> KALMAN: KalmanFilter_Update(&kalman_x, raw_gyro_x, 0, 0.1)
+    KALMAN -> MCU: filtered_x
+    MCU -> KALMAN: KalmanFilter_Update(&kalman_y, raw_gyro_y, 0, 0.1)
+    KALMAN -> MCU: filtered_y
+    
+    note over MCU: Chuyển đổi:\ngyro_x = filtered_x / 16.4f\ngyro_y = filtered_y / 16.4f\nscale_factor = 0.5f\ndx = (int8_t)(gyro_x * scale_factor)\ndy = (int8_t)(gyro_y * scale_factor)
+    
+    alt USB Connected
+        MCU -> USB: USBD_HID_SendReport(buffer[4])
+        note over MCU: buffer[0] = buttons\nbuffer[1] = dx\nbuffer[2] = dy\nbuffer[3] = wheel
+        USB -> PC: HID Mouse Report
+        PC -> PC: Di chuyển chuột theo dx, dy
+    end
+end
+
+== Error Handling ==
+alt I2C Error
+    MCU -> MCU: HAL_I2C_Mem_Read() != HAL_OK
+    note over MCU: Bỏ qua lần đọc này
+end
+
+alt USB Error
+    MCU -> USB: USBD_HID_SendReport() != USBD_OK
+    note over MCU: USB chưa sẵn sàng
+end
+
+@enduml
