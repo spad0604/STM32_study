@@ -86,8 +86,28 @@ void Send_Mouse(int8_t dx, int8_t dy);
 void Send_Mouse(int8_t dx, int8_t dy)
 {
     uint8_t buffer[4] = {0}; // [buttons, x, y, wheel]
+
+    // Đọc trạng thái 2 nút nhấn
+
+    if(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0)){
+    	buffer[0] |= 0x01; // Bit 0: Chuột trái
+    }
+
+    if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_1)) {
+    	buffer[0] |= 0x02; // Bit 1: Chuột phải
+    }
+
     buffer[1] = dx;
     buffer[2] = dy;
+
+    // Gửi gói nhấn
+    USBD_HID_SendReport(&hUsbDeviceFS, buffer, 4);
+
+    // Gửi gói thả nút sau 10ms để tránh giữ mãi
+    HAL_Delay(10);
+    buffer[0] = 0;
+    buffer[1] = 0;
+    buffer[2] = 0;
     USBD_HID_SendReport(&hUsbDeviceFS, buffer, 4);
 }
 
@@ -327,6 +347,7 @@ static void MX_I2C1_Init(void)
   */
 static void MX_GPIO_Init(void)
 {
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
   /* USER CODE BEGIN MX_GPIO_Init_1 */
 
   /* USER CODE END MX_GPIO_Init_1 */
@@ -335,6 +356,12 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOH_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
+
+  /*Configure GPIO pins : PA0 PA1 */
+  GPIO_InitStruct.Pin = GPIO_PIN_0|GPIO_PIN_1;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /* USER CODE BEGIN MX_GPIO_Init_2 */
 
