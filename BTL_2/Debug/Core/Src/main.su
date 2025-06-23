@@ -1,0 +1,10 @@
+../Core/Src/main.c:89:6:Send_Mouse_UART	72	static
+../Core/Src/main.c:104:6:Send_Mouse	24	static
+../Core/Src/main.c:122:6:MPU6050_Init	32	static
+../Core/Src/main.c:154:6:Read_Sensor_Data	80	static
+../Core/Src/main.c:176:5:main	72	static
+../Core/Src/main.c:273:6:SystemClock_Config	88	static
+../Core/Src/main.c:319:13:MX_I2C1_Init	8	static
+../Core/Src/main.c:367:13:MX_USART1_UART_Init	8	static
+../Core/Src/main.c:400:13:MX_GPIO_Init	24	static
+../Core/Src/main.c:424:6:Error_Handler	4	static,ignoring_inline_asm

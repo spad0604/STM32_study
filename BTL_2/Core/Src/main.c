@@ -18,7 +18,6 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "usb_device.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -26,7 +25,7 @@
 #include <string.h>
 #include <stdint.h>
 #include <math.h>
-#include <kalman.h>
+// #include <kalman.h>  // Tạm thời tắt Kalman để test
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -55,27 +54,46 @@
 /* Private variables ---------------------------------------------------------*/
 I2C_HandleTypeDef hi2c1;
 
+UART_HandleTypeDef huart1;
+
 /* USER CODE BEGIN PV */
-extern USBD_HandleTypeDef hUsbDeviceFS;
-KalmanFilter_t kalman_x, kalman_y, kalman_z;
+// extern USBD_HandleTypeDef hUsbDeviceFS;  // Đã tắt USB
+// KalmanFilter_t kalman_x, kalman_y, kalman_z;
 
 uint8_t gyro_data[6];
 int16_t raw_gyro_x, raw_gyro_y, raw_gyro_z;
-uint8_t usb_connected = 0;
+// uint8_t usb_connected = 0;  // Không cần nữa
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_I2C1_Init(void);
+static void MX_USART1_UART_Init(void);
 /* USER CODE BEGIN PFP */
 void Read_Sensor_Data(void);
 void MPU6050_Init(void);
 void Send_Mouse(int8_t dx, int8_t dy);
+void Send_Mouse_UART(int8_t dx, int8_t dy);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
+/**
+  * @brief  Gửi mouse data qua UART (thay vì USB HID)
+  * @param  dx: Delta X (-127 to 127)
+  * @param  dy: Delta Y (-127 to 127)
+  * @retval None
+  */
+void Send_Mouse_UART(int8_t dx, int8_t dy)
+{
+    char buffer[50];
+    
+    // Format: "MOUSE:dx,dy\n" - dễ parse trên PC
+    sprintf(buffer, "MOUSE:%d,%d\n", dx, dy);
+    HAL_UART_Transmit(&huart1, (uint8_t*)buffer, strlen(buffer), HAL_MAX_DELAY);
+}
 
 /**
   * @brief  Gửi mouse report qua USB HID
@@ -85,10 +103,16 @@ void Send_Mouse(int8_t dx, int8_t dy);
   */
 void Send_Mouse(int8_t dx, int8_t dy)
 {
+    // Gửi qua cả USB và UART để test
     uint8_t buffer[4] = {0}; // [buttons, x, y, wheel]
     buffer[1] = dx;
     buffer[2] = dy;
-    USBD_HID_SendReport(&hUsbDeviceFS, buffer, 4);
+    
+    // Chỉ gửi khi có movement để tránh spam
+    if(dx != 0 || dy != 0) {
+        // USBD_HID_SendReport(&hUsbDeviceFS, buffer, 4);
+        Send_Mouse_UART(dx, dy); // Gửi qua UART backup
+    }
 }
 
 /**
@@ -136,21 +160,10 @@ void Read_Sensor_Data(void)
         raw_gyro_y = (int16_t)(gyro_data[2] << 8 | gyro_data[3]);
         raw_gyro_z = (int16_t)(gyro_data[4] << 8 | gyro_data[5]);
 
-        float filtered_x = KalmanFilter_Update(&kalman_x, raw_gyro_x, 0, 0.1f);
-        float filtered_y = KalmanFilter_Update(&kalman_y, raw_gyro_y, 0, 0.1f);
-        float filtered_z = KalmanFilter_Update(&kalman_z, raw_gyro_z, 0, 0.1f);
-
-        // Chuyển đổi sang độ/giây và scale cho mouse movement
-        float gyro_x = filtered_x / 16.4f; // Chuyển sang độ/giây
-        float gyro_y = filtered_y / 16.4f;
-        
-        // Scale và mapping sang mouse delta (có thể điều chỉnh scale_factor)
-        float scale_factor = 0.5f; // Điều chỉnh để phù hợp
-        int8_t dx = (int8_t)(gyro_x * scale_factor);
-        int8_t dy = (int8_t)(gyro_y * scale_factor);
-        
-        // Gửi mouse movement qua USB HID
-        Send_Mouse(dx, dy);
+        // Debug: gửi dữ liệu qua UART
+        char debug_buffer[50];
+        sprintf(debug_buffer, "Gyro: X=%d, Y=%d, Z=%d\n", raw_gyro_x, raw_gyro_y, raw_gyro_z);
+        HAL_UART_Transmit(&huart1, (uint8_t*)debug_buffer, strlen(debug_buffer), HAL_MAX_DELAY);
     }
 }
 
@@ -186,22 +199,34 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_I2C1_Init();
-  MX_USB_DEVICE_Init();
+  MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
   
-  // Delay để USB enumeration hoàn tất
-  HAL_Delay(1000);
+  // Gửi thông báo khởi động qua UART
+  HAL_UART_Transmit(&huart1, (uint8_t*)"=== STM32 UART Test Started ===\n", 33, HAL_MAX_DELAY);
   
-  // Khởi tạo MPU6050
+  // Thêm delay dài hơn để power ổn định
+  HAL_Delay(2000);
+  
+  // Khởi tạo MPU6050 trước
+  HAL_UART_Transmit(&huart1, (uint8_t*)"Initializing MPU6050...\n", 25, HAL_MAX_DELAY);
   MPU6050_Init();
+  HAL_UART_Transmit(&huart1, (uint8_t*)"MPU6050 initialized!\n", 22, HAL_MAX_DELAY);
   
   // Delay để sensor ổn định
-  HAL_Delay(500);
+  HAL_Delay(1000);
   
   // Khởi tạo Kalman filters
-  KalmanFilter_Init(&kalman_x, 0.001, 0.003, 0.03);
-  KalmanFilter_Init(&kalman_y, 0.001, 0.003, 0.03);
-  KalmanFilter_Init(&kalman_z, 0.001, 0.003, 0.03);
+  // KalmanFilter_Init(&kalman_x, 0.001, 0.003, 0.03);
+  // KalmanFilter_Init(&kalman_y, 0.001, 0.003, 0.03);
+  // KalmanFilter_Init(&kalman_z, 0.001, 0.003, 0.03);
+  
+  // USB initialization cuối cùng
+  // MX_USB_DEVICE_Init();
+  
+  // Delay cuối để đảm bảo USB enumeration hoàn tất
+  HAL_Delay(1000);
+  HAL_UART_Transmit(&huart1, (uint8_t*)"Starting main loop...\n", 23, HAL_MAX_DELAY);
   
   /* USER CODE END 2 */
 
@@ -212,16 +237,30 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-    // Kiểm tra USB connection status
-    if(hUsbDeviceFS.pClassData != NULL) {
-      usb_connected = 1;
-      // Đọc và gửi dữ liệu từ sensor
-      Read_Sensor_Data();
-    } else {
-      usb_connected = 0;
+    // Test counter để kiểm tra loop hoạt động
+    static uint32_t loop_counter = 0;
+    static uint32_t last_print_time = 0;
+    
+    // In thông báo mỗi giây
+    if(HAL_GetTick() - last_print_time > 1000) {
+        last_print_time = HAL_GetTick();
+        loop_counter++;
+        
+        char status_msg[50];
+        sprintf(status_msg, "Loop #%lu - Tick: %lu\n", loop_counter, HAL_GetTick());
+        HAL_UART_Transmit(&huart1, (uint8_t*)status_msg, strlen(status_msg), HAL_MAX_DELAY);
     }
     
-    // Delay 100ms
+    // Test đọc sensor mỗi 2 giây
+    static uint32_t last_sensor_time = 0;
+    if(HAL_GetTick() - last_sensor_time > 2000) {
+        last_sensor_time = HAL_GetTick();
+        
+        HAL_UART_Transmit(&huart1, (uint8_t*)"Reading sensor...\n", 18, HAL_MAX_DELAY);
+        Read_Sensor_Data();
+    }
+    
+    // Delay ngắn
     HAL_Delay(100);
   }
   /* USER CODE END 3 */
@@ -317,6 +356,39 @@ static void MX_I2C1_Init(void)
   /* USER CODE BEGIN I2C1_Init 2 */
 
   /* USER CODE END I2C1_Init 2 */
+
+}
+
+/**
+  * @brief USART1 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_USART1_UART_Init(void)
+{
+
+  /* USER CODE BEGIN USART1_Init 0 */
+
+  /* USER CODE END USART1_Init 0 */
+
+  /* USER CODE BEGIN USART1_Init 1 */
+
+  /* USER CODE END USART1_Init 1 */
+  huart1.Instance = USART1;
+  huart1.Init.BaudRate = 115200;
+  huart1.Init.WordLength = UART_WORDLENGTH_8B;
+  huart1.Init.StopBits = UART_STOPBITS_1;
+  huart1.Init.Parity = UART_PARITY_NONE;
+  huart1.Init.Mode = UART_MODE_TX_RX;
+  huart1.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart1.Init.OverSampling = UART_OVERSAMPLING_16;
+  if (HAL_UART_Init(&huart1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN USART1_Init 2 */
+
+  /* USER CODE END USART1_Init 2 */
 
 }
 
