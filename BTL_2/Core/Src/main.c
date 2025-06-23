@@ -54,6 +54,11 @@
 #define MAX_MOUSE_MOVE       75    // Giới hạn movement tối đa (tăng = nhanh hơn)
 #define CALIBRATION_SAMPLES  200   // Số mẫu cho calibration
 
+#define LSB_ACC              16384.0f   // ±2g → 16384 LSB/g
+#define LSB_GYRO             131.0f     // ±250 dps → 131 LSB/(°/s)
+#define RAD_TO_DEG 57.29577951308232
+
+
 typedef struct {
     uint8_t buttons;
     int8_t dx;
@@ -81,8 +86,14 @@ KalmanFilter_t kalman_gyro_x, kalman_gyro_y, kalman_gyro_z;
 
 // Raw gyroscope data
 uint8_t gyro_data[6];
+int16_t raw_accel_x, raw_accel_y, raw_accel_z;
+float accel_x, accel_y, accel_z;
+
 int16_t raw_gyro_x, raw_gyro_y, raw_gyro_z;
 float gyro_x, gyro_y, gyro_z;
+
+float angleX, angleY;
+
 
 // Mouse control variables
 uint8_t mouse_enabled = 1;           // Enable/disable mouse
@@ -258,32 +269,63 @@ void Process_Gyro_Mouse(void)
     // Đọc dữ liệu gyroscope từ MPU6050
     if(HAL_I2C_Mem_Read(&hi2c1, MPU6050_ADDR, MPU6050_GYRO_XOUT_H, 1, gyro_data, 6, HAL_MAX_DELAY) == HAL_OK)
     {
-        raw_gyro_x = (int16_t)(gyro_data[0] << 8 | gyro_data[1]);
-        raw_gyro_y = (int16_t)(gyro_data[2] << 8 | gyro_data[3]);
-        raw_gyro_z = (int16_t)(gyro_data[4] << 8 | gyro_data[5]);
+        raw_accel_x = (int16_t)(gyro_data[0] << 8 | gyro_data[1]);
+        raw_accel_y = (int16_t)(gyro_data[2] << 8 | gyro_data[3]);
+        raw_accel_z = (int16_t)(gyro_data[4] << 8 | gyro_data[5]);
         
         // Chuyển đổi sang °/s và trừ offset
-        float gyro_x_raw = ((float)raw_gyro_x / 16.4f) - gyro_offset_x;
-        float gyro_y_raw = ((float)raw_gyro_y / 16.4f) - gyro_offset_y;
-        float gyro_z_raw = ((float)raw_gyro_z / 16.4f) - gyro_offset_z;
+        float accel_x_raw = ((float)raw_accel_x / 16.4f) - gyro_offset_x;
+        float accel_y_raw = ((float)raw_accel_y / 16.4f) - gyro_offset_y;
+        float accel_z_raw = ((float)raw_accel_z / 16.4f) - gyro_offset_z;
         
-        // Áp dụng Kalman filter để làm mượn
-        gyro_x = KalmanFilter_Update(&kalman_gyro_x, gyro_x_raw, 0, 0.01f);
-        gyro_y = KalmanFilter_Update(&kalman_gyro_y, gyro_y_raw, 0, 0.01f);
-        gyro_z = KalmanFilter_Update(&kalman_gyro_z, gyro_z_raw, 0, 0.01f);
-        
+        raw_gyro_x = (int16_t)(rec_data[8] << 8 | rec_data[9]);
+        raw_gyro_y = (int16_t)(rec_data[10] << 8 | rec_data[11]);
+        raw_gyro_z = (int16_t)(rec_data[12] << 8 | rec_data[13]);
+
+        float gyro_x_raw = ((float)raw_gyro_x / LSB_GYRO);
+        float gyro_y_raw = ((float)raw_gyro_y / LSB_GYRO);
+        float gyro_z_raw = ((float)raw_gyro_z / LSB_GYRO);
+
+
+        // Tính thời gian dt giữa hai lần đo
+        double dt = (double)(HAL_GetTick() - timer) / 1000.0;
+        timer = HAL_GetTick();
+
+        // Tính góc roll từ gia tốc (gần đúng)
+        double roll_sqrt = sqrt(raw_accel_x * raw_accel_x + raw_accel_z * raw_accel_z);
+        double roll = (roll_sqrt != 0.0) ? atan(raw_accel_y / roll_sqrt) * RAD_TO_DEG : 0.0;
+
+        // Tính góc pitch từ gia tốc bằng atan2
+        double pitch = atan2(-raw_accel_x, raw_accel_z) * RAD_TO_DEG;
+
+        // Bảo vệ bộ lọc Kalman khỏi nhảy đột ngột khi pitch vượt ±90°
+        if ((pitch < -90 && angleY > 90) || (pitch > 90 && angleY < -90)) {
+        	kalman_gyro_y.angle = pitch;
+            angleY = pitch;
+        } else {
+            angleY = KalmanFilter_Update(&kalman_gyro_y, pitch,gyro_y_raw, dt);
+        }
+
+        // Nếu pitch vượt ±90°, đảo chiều trục X
+        if (fabs(angleY) > 90)
+        	 gyro_x_raw = - gyro_x_raw;
+
+        // Cập nhật roll bằng Kalman filter
+        angleX = KalmanFilter_Update(&kalman_gyro_x, roll,gyro_x_raw, dt);
+
+
         // Calculate mouse movement
         int8_t mouse_dx = 0, mouse_dy = 0;
         
         // Apply deadzone và calculate movement
-        if(abs((int)gyro_x) > GYRO_DEADZONE)
+        if(abs((int)angleX) > GYRO_DEADZONE)
         {
-            mouse_dx = (int8_t)(-gyro_x / MOUSE_SENSITIVITY_X); // Invert X for natural movement
+            mouse_dx = (int8_t)(-angleX / MOUSE_SENSITIVITY_X); // Invert X for natural movement
         }
         
-        if(abs((int)gyro_y) > GYRO_DEADZONE)  
+        if(abs((int)angleY) > GYRO_DEADZONE)
         {
-            mouse_dy = (int8_t)(gyro_y / MOUSE_SENSITIVITY_Y);
+            mouse_dy = (int8_t)(angleY / MOUSE_SENSITIVITY_Y);
         }
         
         // Limit movement
@@ -306,7 +348,7 @@ void Process_Gyro_Mouse(void)
             if(abs(mouse_dx) >= 1 || abs(mouse_dy) >= 1 || buttons != 0) {
                 char debug_buffer[120];
                 sprintf(debug_buffer, "🖱️  Move: dx=%d dy=%d | Gyro: gx=%.1f gy=%.1f | Btn=%d\r\n", 
-                        mouse_dx, mouse_dy, gyro_x, gyro_y, buttons);
+                        mouse_dx, mouse_dy, angleX, angleY, buttons);
                 HAL_UART_Transmit(&huart1, (uint8_t*)debug_buffer, strlen(debug_buffer), HAL_MAX_DELAY);
             }
         }
