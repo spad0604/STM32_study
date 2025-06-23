@@ -1,0 +1,4 @@
+../Core/Src/KalmanFilter.c:12:6:KalmanFilter_Init	1
+../Core/Src/KalmanFilter.c:29:8:KalmanFilter_Update	1
+../Core/Src/KalmanFilter.c:69:8:KalmanFilter_GetAngle	1
+../Core/Src/KalmanFilter.c:73:8:KalmanFilter_GetRate	1
