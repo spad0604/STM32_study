@@ -29,6 +29,8 @@
 #include "stm32f4xx_hal.h"  // Bổ sung để tránh lỗi undefined
 #include "kalman.h"         // Cho Kalman filtering
 #include "usbd_hid.h"       // Cho USB HID mouse
+#include "math.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -93,6 +95,7 @@ int16_t raw_gyro_x, raw_gyro_y, raw_gyro_z;
 float gyro_x, gyro_y, gyro_z;
 
 float angleX, angleY;
+uint32_t timer = 0;
 
 
 // Mouse control variables
@@ -278,9 +281,9 @@ void Process_Gyro_Mouse(void)
         float accel_y_raw = ((float)raw_accel_y / 16.4f) - gyro_offset_y;
         float accel_z_raw = ((float)raw_accel_z / 16.4f) - gyro_offset_z;
         
-        raw_gyro_x = (int16_t)(rec_data[8] << 8 | rec_data[9]);
-        raw_gyro_y = (int16_t)(rec_data[10] << 8 | rec_data[11]);
-        raw_gyro_z = (int16_t)(rec_data[12] << 8 | rec_data[13]);
+        raw_gyro_x = (int16_t)(gyro_data[8] << 8 | gyro_data[9]);
+        raw_gyro_y = (int16_t)(gyro_data[10] << 8 | gyro_data[11]);
+        raw_gyro_z = (int16_t)(gyro_data[12] << 8 | gyro_data[13]);
 
         float gyro_x_raw = ((float)raw_gyro_x / LSB_GYRO);
         float gyro_y_raw = ((float)raw_gyro_y / LSB_GYRO);
